@@ -1,3 +1,5 @@
+<?php
+$xmlstr = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="TCM_css.css"?>
 <!--DOCTYPE TCM SYSTEM "TCM.dtd"-->
@@ -789,3 +791,5 @@
     </formeln>
     
 </TCM>
+XML;
+?>
