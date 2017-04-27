@@ -24,7 +24,7 @@
     include 'TCM.php';
     
     $TCM = new SimpleXMLElement($xmlstr);
-    
+
     echo "<h2>Einzelbeispiel</h2>";
     
     echo $TCM->kategorien->kategorie[0]->name;
