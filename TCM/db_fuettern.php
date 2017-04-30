@@ -10,7 +10,9 @@
             include 'TCM.php';
             
             $TCM = new SimpleXMLElement($xmlstr);
-            $i = 0;
+            
+        /**Kraut-Kategorien**/    
+            $i = 1;
             foreach ($TCM->kategorien->kategorie as $kategorie) {
                 $insert_parts[] = "(".$i.",'".$kategorie->name."')";
                 $i++;
@@ -18,9 +20,10 @@
             $kat_query="INSERT INTO kategorie (kat_id, name) VALUES ".implode(",",$insert_parts).";";
                  
             //echo "<br>".$kat_query;     
-            mysqli_query($db, $kat_query) or die(mysqli_error($db));
+            //mysqli_query($db, $kat_query) or die(mysqli_error($db));
                 
-            $i = 0;
+        /**Kraeuter**/
+            $i = 1;
             foreach ($TCM->kraeuter->kraut as $kraut) {
                 
                 $wirkungs_array = array();
@@ -37,7 +40,13 @@
             $kra_query = "INSERT INTO kraut (kra_id, name, wirkung, merkmal, bild) VALUES ".implode(",",$tuple_array).";";
             //echo "<br>".$kra_query;
             
-            mysqli_query($db, $kra_query) or die(mysqli_error($db));
+            //mysqli_query($db, $kra_query) or die(mysqli_error($db));
+        
+        /**Formeln**/
+            $i = 1;
+            foreach ($TCM->formeln->formel as $formel) {
+                
+            }
             
         ?>
             

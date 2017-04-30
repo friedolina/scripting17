@@ -1,1 +1,5 @@
 if(is_numeric($deine_anzahl)) --> Damit kann man überprüfen, ob eine Zahl eingegeben wurde
+
+starte DB:
+mysql-ctl cli
+use c9
