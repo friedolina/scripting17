@@ -3,3 +3,6 @@ if(is_numeric($deine_anzahl)) --> Damit kann man überprüfen, ob eine Zahl eing
 starte DB:
 mysql-ctl cli
 use c9
+
+starte phpMyAdmin:
+https://semesterproject-frieda.c9users.io/phpmyadmin 

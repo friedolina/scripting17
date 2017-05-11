@@ -17,3 +17,6 @@
         die("Connection failed: " . $db->connect_error);
     } 
     echo "Connected successfully (".$db->host_info.")";
+    
+    //Schriftkodierung festlegen
+    mysqli_set_charset($db, "utf-8");
