@@ -6,3 +6,5 @@ use c9
 
 starte phpMyAdmin:
 https://semesterproject-frieda.c9users.io/phpmyadmin 
+
+https://semesterproject-frieda.c9users.io/
