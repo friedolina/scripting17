@@ -2,6 +2,31 @@
 
         <?php
             include 'connect.php';
+            
+            $sql_kraut = "SELECT
+            name
+            FROM
+            kraut";
+            
+            $result_kraut = mysqli_query($db, $sql_kraut);
+            
+            $sql_kat = "SELECT
+            name
+             FROM 
+            kategorie";
+            
+            $result_kat = mysqli_query($db, $sql_kat);
+            
+            $sql_klasse = "SELECT
+            name
+            FROM
+            formelklasse";
+            
+            $result_klasse = mysqli_query($db, $sql_klasse);
+            
+            $alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+?>
         ?>
 <html>
     <head>
@@ -11,11 +36,12 @@
         <script src="/TCM/script/addInput.js" language="Javascript" type="text/javascript"></script>
         <script src="/TCM/script/eintragBearbeiten.js" language="Javascript" type="text/javascript"></script>
         <script src="/TCM/script/bootstrap.js" language="Javascript" type="text/javascript"></script>
+        <!--script src="/TCM/script/bootstrap.min.js" language="Javascript" type="text/javascript"></script-->
         <script src="/TCM/script/npm.js" language="Javascript" type="text/javascript"></script>
         <title>TCM-Kräuterlexikon</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="/TCM/style/bootstrap.css">   
-        <link rel="stylesheet" href="/TCM/style/bootstrap.min.css">   
+        <!--link rel="stylesheet" href="/TCM/style/bootstrap.min.css"-->   
         <link rel="stylesheet" href="/TCM/style/style.css">   
     </head>    
     <body>
@@ -36,11 +62,11 @@
         <div id="navbar-collapse-1" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <!-- Classic list -->
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">List<b class="caret"></b></a>
+            <!--li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">List<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                   <!-- Content container to add padding -->
-                  <div class="yamm-content">
+                  <!--div class="yamm-content">
                     <div class="row">
                       <ul class="col-sm-2 list-unstyled">
                         <li>
@@ -93,36 +119,102 @@
                   </div>
                 </li>
               </ul>
-            </li>
+            </li-->
             <!-- Accordion demo -->
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Accordion<b class="caret"></b></a>
+            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Anzeigen<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                   <div class="yamm-content">
                     <div class="row">
-                      <div id="accordion" class="panel-group">
+                      <div id="accordion" class="panel-group scrollable-menu">
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Collapsible Group Item #1</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Alle Kräuter alphabetisch</a></h4>
                           </div>
-                          <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">Ut consectetur ullamcorper purus a rutrum. Etiam dui nisi, hendrerit feugiat scelerisque et, cursus eu magna. </div>
+                          <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <?php
+                                      
+                                    foreach(range('A','Z') as $i) {
+                                        if(strpos($alph, $i) !== FALSE) {
+                                            echo "<ul class='col-sm-2 list-unstyled'>";
+                                            echo "<h4>" . $i . "</h4>";
+                                            foreach($result_kraut as $kraut) {
+                                                if (substr($kraut['name'], 0, 1) == $i) {
+                                                    echo "<li>" . $kraut['name'] . "</li>";
+                                                } elseif (substr($kraut['name'], 0, 1) == FALSE) {
+                                                    echo "<li>Zwei</li>";
+                                                    echo "<li>Drei</li>";
+                                                }
+                                            }
+                                        }
+                                    }
+                                ?>
+                              
+                            </div>
                           </div>
-                        </div>
+                        </div>  
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Collapsible Group Item #2</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Alle Kräuter nach Kategorien</a></h4>
                           </div>
                           <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">Nullam pretium fermentum sapien ut convallis. Suspendisse vehicula, magna non tristique tincidunt, massa nisi luctus tellus, vel laoreet sem lectus ut nibh. </div>
+                            <div class="panel-body">
+                              <?php
+                                  while ( $kat = mysqli_fetch_assoc($result_kat)) {
+                                    echo "<ul class='col-sm-2 list-unstyled'>";
+                                    echo "<li><h4>" . $kat[name] . "</h4></li>";
+                                    echo "<li>Eins</li>";
+                                    echo "<li>Zwei</li>";
+                                    echo "<li>Drei</li>";
+                                    echo "</ul>";
+                                    
+                                  }
+                                ?>
+                              
+                            </div>
                           </div>
                         </div>
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Collapsible Group Item #3</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Alle Formeln alphabetisch</a></h4>
                           </div>
                           <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">Praesent leo quam, faucibus at facilisis id, rhoncus sit amet metus. Sed vitae ipsum non nibh mattis congue eget id augue. </div>
+                            <div class="panel-body">
+                                <?php
+                                      
+                                    foreach(range('A','Z') as $i) {
+                                        if(strpos($alph, $i) !== FALSE) {
+                                            echo "<ul class='col-sm-2 list-unstyled'>";
+                                            echo "<h4>" . $i . "</h4>";
+                                            echo "<li>Eins</li>";
+                                            echo "<li>Zwei</li>";
+                                            echo "<li>Drei</li>";
+                                            echo "</ul>";
+                                        }
+                                    }
+                                ?>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Alle Formeln nach Klassen</a></h4>
+                          </div>
+                          <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <?php
+                                  while ( $klasse = mysqli_fetch_assoc($result_klasse)) {
+                                    echo "<ul class='col-sm-2 list-unstyled'>";
+                                    echo "<li><h4>" . $klasse[name] . "</h4></li>";
+                                    echo "<li>Eins</li>";
+                                    echo "<li>Zwei</li>";
+                                    echo "<li>Drei</li>";
+                                    echo "</ul>";
+                                    
+                                  }
+                                ?>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -164,7 +256,7 @@
                                 <!--label for="input_search"></label-->
                                 <input type="text" class="form-control" required="required" name="search_form" maxlength="150" placeholder="Suche...">
                                 <!--span class="help-block"></span-->
-                                <button type="submit" class="btn btn-default" name="submit" >Search</button>
+                                <button type="submit" class="btn btn-default" name="submit" >Suche</button>
 
                             </div>
         </div>

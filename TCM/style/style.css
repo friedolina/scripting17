@@ -6,6 +6,10 @@ body p, input {
     display: inline-block;
     margin: 10px;
 }
+#header{
+  margin-top: 75px;
+  text-align: center;
+}
 .back-to-top {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -69,10 +73,10 @@ footer {
 .list-unstyled,
 .list-unstyled ul { min-width: 120px }
 
-@media ( min-width: 767px ) {
+/*@media ( min-width: 767px ) {
   .panel-group { width: 400px; }
   .thumbnail { margin: 0; }
-}
+}*/
 
 /* Grid demo styles */
 .grid-demo {
@@ -112,6 +116,12 @@ footer {
 .yamm .dropdown.yamm-fw .dropdown-menu {
   left: 0;
   right: 0;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 450px;
+    overflow-x: hidden;
 }
 /*********** Multilevel Menu **************/
 /**
