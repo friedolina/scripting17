@@ -1,14 +1,12 @@
 body {
     font-family: 'Playfair Display', serif;
      /**font-size: 24pt;**/
-    width:50%;
-    margin: auto;
 }
 body p, input {
     display: inline-block;
     margin: 10px;
 }
-#myBtn {
+.back-to-top {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     bottom: 20px; /* Place the button at the bottom of the page */
@@ -18,4 +16,16 @@ body p, input {
 }
 .entry h4 {
     margin: 5px 0;
+}
+.entry input.bearbeiten, .entry h3 {
+    display: inline;
+}
+#content_container {
+    width:50%;
+    margin: auto;
+}
+#content_container img {
+    padding: 5% 2%;
+    max-width: 95%;
+    max-height: 650px;
 }

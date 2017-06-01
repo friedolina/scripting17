@@ -123,7 +123,7 @@ $xmlstr = <<<XML
             <wirkung>Stagnation von Flüssigkeiten wird abgebaut</wirkung>
             <wirkung>aromatisch, aufsteigend</wirkung>
             <wirkung>kann NW anderer Kräuter aufheben, schiebt Funktionen an,  wie Schütteln</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="ban_xia">
@@ -143,7 +143,7 @@ $xmlstr = <<<XML
             <merkmal>nicht bei LH, stillenden Müttern</merkmal>
             <wirkung>verteilt Wind Hitze, eliminiert Hitze in Kopf, Augen und Kehle</wirkung>
             <wirkung>fördert Holz- Qi- Fluss, gut bei allen Holz- Qi- Stagnationen</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="chai_hu">
@@ -159,7 +159,7 @@ $xmlstr = <<<XML
             <wirkung>wirkt also auf E, also auf das schon offene System</wirkung>
             <wirkung>geht aber auch auf tiefere Ebenen, Chen Pi bleibt auf E- Ebene</wirkung>
             <wirkung>je angespannter man ist, umso stärker ist die Erwartungshaltung, umso angespannter auch nach formeleinnahme</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="chen_pi">
@@ -206,7 +206,7 @@ $xmlstr = <<<XML
             <merkmal>Alternative zu Ren Shen (Ginseng)</merkmal>
             <wirkung>befeuchtend, regeneriert Flüssigkeiten</wirkung>
             <wirkung>flüssigkeitsstabilisierend, stabilisiert Embolien, Vitalität wird wiederhergestellt</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="da_zao">
@@ -234,7 +234,7 @@ $xmlstr = <<<XML
             <wirkung>auch bei Wind auf Verdauungsebene, wenn H- Qi- Stagnation Verdauung behindert (auch als Assistent)
             </wirkung>
             <wirkung>bringt bewegende wirkung an die OF, z.B. bei Handgelenk</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="fu_ling">
@@ -243,7 +243,7 @@ $xmlstr = <<<XML
             <merkmal>Pilz</merkmal>
             <wirkung>trafo Nässe auf E- Ebene, zusammen mit Bai Zhu (Qi- Tonic)</wirkung>
             <wirkung>bei Nässe durch E- Qi- Mangel, eliminiert Nässe, wird gerne mit Qi- Tonic kombiniert</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="fu_zi">
@@ -260,7 +260,7 @@ $xmlstr = <<<XML
             <wirkung>gibt man auch, bevor alles zusammenbricht (ähnlich Katecholamine)</wirkung>
             <wirkung>Blockaden lösen, Öffnung schaffen, scharf zirkuliert ja auch die Wärme</wirkung>
             <wirkung>gerne in Kombi mit frischem Ingwer: fördert E- Trafo</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="gan_cao">
@@ -270,7 +270,7 @@ $xmlstr = <<<XML
             <wirkung>Süßholz, wirkt harmonisierend, weil es nur mild tonsiert</wirkung>
             <wirkung>hitzeausleitend, wirkt auf allen WP</wirkung>
             <wirkung>ähnlich ist Da Zao (Dattel), nährt mehr Richtung Xue, harmonisiert aber nicht so doll</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="gan_jiang">
@@ -283,7 +283,7 @@ $xmlstr = <<<XML
             <wirkung>Yang befreien, wenn Yang durch Kälte blockiert (nach z.B. in Eis einbrechen)</wirkung>
             <wirkung>wärmt und startet Flüssigkeit- Zirkulation, kann also auch Xue- Zirkulation machen</wirkung>
             <wirkung>KI: Hitze, Yin xu, Grav.</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="geng_mi">
@@ -291,7 +291,7 @@ $xmlstr = <<<XML
             <name>Geng Mi</name>
             <merkmal>glutenfreier Reis, um Verdauung zu erleichtern</merkmal>
             <wirkung></wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="gui_zhi">
@@ -309,7 +309,7 @@ $xmlstr = <<<XML
             <wirkung>macht Yang frei</wirkung>
             <wirkung>generell wird OF geöffnet durch leichte Bewegung, Wärme, Yang- Anhebung</wirkung>
             <wirkung>fördert Qi- Zirkulation an OF, vorwiegend im vorderen neuen Bereich</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="huang_lian">
@@ -327,7 +327,7 @@ $xmlstr = <<<XML
             <wirkung>NH im Verdauungsbereich, DF, Sodbrennen bei Magenhitze</wirkung>
             <wirkung>Hitze auf Xue- Ebene (Blutungen)</wirkung>
             <wirkung>KI: Yin xue, Kälte in Verdauung, antagonistisch zu Ju Hua, Xuan Shen</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="huang_qi">
@@ -355,7 +355,7 @@ $xmlstr = <<<XML
             <wirkung>eliminiert Hitze, besonders im OE, bei blutstockender Hitze</wirkung>
             <wirkung>beruhigt den Foetus (bei Hitze)</wirkung>
             <wirkung>sedierende wirkung auf aufsteigendes Holz-Yang</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="jing_jie">
@@ -368,7 +368,7 @@ $xmlstr = <<<XML
             <wirkung>befreit OF, macht Wind- Aspekt weg, ist nicht wegen der Wärme drin</wirkung>
             <wirkung>ventilierende wirkung auf Haut, erleichtert Jucken Wind ist immer Fülle, Blockade</wirkung>
             <wirkung>auch blutstockende wirkung, weil scharf, deswegen bewegt</wirkung>		
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="mai_ya">
@@ -378,7 +378,7 @@ $xmlstr = <<<XML
             <merkmal>gegen Milchverdauungsprobleme bei Babies, auch gegen Brustmilchstagnation</merkmal>
             <merkmal>reguliert geschmeidigen Qi- Fluss (Rülpsen, Aufstoßen)</merkmal>
             <wirkung>roh neutral, getrocknet warm, süß, E+++, stärkt Verdauung bei E- Qi xu</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="mu_dan_pi">
@@ -405,7 +405,7 @@ $xmlstr = <<<XML
             <wirkung>weil es OF öffnet, ist es gut für obere Gelenke (Schulter, EB)</wirkung>
             <wirkung>reguliert zentrale Steigen und Sinken- Achse, richtet das Qi auf in W+F- Achse</wirkung>
             <wirkung>aufpassen bei Xue xu und Yin xu, weil es schwächt, durch das Aufrichten</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="rou_dou_kou">
@@ -419,7 +419,7 @@ $xmlstr = <<<XML
             <wirkung>Verdauung und Trafo stabilisieren</wirkung>
             <wirkung>zirkuliert Qi (deswegen bei DF oder Verstopfung), löst Schmerz</wirkung>
             <wirkung>kann DF bei Kälte (Qi xu, Yang xu) stoppen</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="shan_yao">
@@ -430,7 +430,7 @@ $xmlstr = <<<XML
             <merkmal>für formeln, die Nährung nach oben bringen sollen, also als Kombi mit Xue- Tonic</merkmal>
             <wirkung>sauer, aufrichtend</wirkung>
             <wirkung>adstringiert, verhindert den übermäßigen Verbrauch der Jing- Ebene, schafft Verbindung von Qi- zur Jing- Ebene</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="shan_zha">
@@ -442,7 +442,7 @@ $xmlstr = <<<XML
             <wirkung>reguliert Xue ju (hier roh besser)</wirkung>
             <wirkung>reguliert Anspannung</wirkung>
             <wirkung>gegen DF (hier gekocht besser)</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="shan_zhu_you">
@@ -451,7 +451,7 @@ $xmlstr = <<<XML
             <alternativname>Japanische Kornellkirsche</alternativname>
             <wirkung>stabilisierend und bindend (adstringierend) auf W-Ebene</wirkung>
             <wirkung>zieht Nährung anderer Kräuter auf W-Ebene</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="sheng_di_huang">
@@ -474,7 +474,7 @@ $xmlstr = <<<XML
             <wirkung>wärmt und reguliert Magen, Ü + E (Kälte im Kochtopf)</wirkung>
             <wirkung>reduziert Toxizität von anderen Kräutern z.B. Fu Zi</wirkung>
             <wirkung>gut bei Schwitzen nach Erkrankung, weil es so gut reguliert</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="sheng_ma">
@@ -489,7 +489,7 @@ $xmlstr = <<<XML
             <wirkung>eliminiert Hitze und Gift (stagnierte Hitze)</wirkung>
             <wirkung>hebt das abgesunkene Yang (Müdigkeit, Kurzatmigkeit)</wirkung>
             <wirkung>kann als Übermittler eingesetzt werden</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="shen_qu">
@@ -500,7 +500,7 @@ $xmlstr = <<<XML
             <merkmal>Völle, Aufstoßen, DF, Darmgeräusche, DF</merkmal>
             <merkmal>nicht bei Magen-Hitze und Gravidität</merkmal>
             <wirkung>eguliert Verdauung, Nahrungsstagnation, harmonisiert Magen</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="shi_gao">
@@ -519,7 +519,7 @@ $xmlstr = <<<XML
             <wirkung>klärt Feuer aus Atmung, Husten, klebriger Schleim</wirkung>
             <wirkung>nährt (süß), schädigt aber auch die Verdauung</wirkung>
 
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="shu_di_huang">
@@ -548,14 +548,14 @@ $xmlstr = <<<XML
             <wirkung>öffnet OF, weist Kälte aus, also für äußere Fülle- Kälte</wirkung>
             <wirkung>stupst auch das Wasser-Yang an</wirkung>
             <wirkung>wärmt Atmung, transformiert Schleim, auch für Nase freimachen</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="ze_xie">
         	<kategorie id="k_0008"></kategorie>
             <name>Ze Xie</name>
             <wirkung>wasser-, hitzeeliminierend, saugt Wasser wie Schwamm auf</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="zhi_gan_zao">
@@ -563,7 +563,7 @@ $xmlstr = <<<XML
             <name>Zhi Gan Zao</name>
             <merkmal>in Honig gebacken, nässt dadurch nicht</merkmal>
             <wirkung>wärmend</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
 
         <kraut id="zhi_mu">
@@ -574,7 +574,7 @@ $xmlstr = <<<XML
             <wirkung>ankern das Yang, Hitze wird nicht einfach nur abgeschnitten (wie z.B. durch Coptis)</wirkung>
             <wirkung>besser für Yin- Nährung, befeuchtet, unterstützt Yin</wirkung>
             <wirkung>regeneriert Flüssigkeiten durch Hitze wegmachen</wirkung>
-            <bild quelle=".jpg"></bild>
+            <bild quelle=""></bild>
         </kraut>
         
     </kraeuter>

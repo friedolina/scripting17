@@ -13,7 +13,7 @@
             
         /**Kraut-Kategorien**/    
             $kategorie_erstellen = "CREATE TABLE kategorie(kat_id INTEGER NOT NULL AUTO_INCREMENT, name VARCHAR(100), PRIMARY KEY (kat_id)) ENGINE=InnoDB;";
-            //mysqli_query($db, $kategorie_erstellen) or die(mysqli_error($db));
+            mysqli_query($db, $kategorie_erstellen) or die(mysqli_error($db));
             $i = 1;
             foreach ($TCM->kategorien->kategorie as $kategorie) {
                 $insert_parts[] = "(".$i.",'".$kategorie->name."')";
@@ -22,11 +22,11 @@
             $kategorie_query="INSERT INTO kategorie (kat_id, name) VALUES ".implode(",",$insert_parts).";";
                  
             //echo "<br>".$kategorie_query;     
-            //mysqli_query($db, $kategorie_query) or die(mysqli_error($db));
+            mysqli_query($db, $kategorie_query) or die(mysqli_error($db));
                 
         /**Kraeuter**/
-            $kraut_erstellen = "CREATE TABLE kraut(kra_id INTEGER NOT NULL AUTO_INCREMENT, name VARCHAR(100), wirkung VARCHAR(200), merkmal VARCHAR(200), bild VARCHAR(100), PRIMARY KEY (kra_id)) ENGINE=InnoDB;";
-            //mysqli_query($db, $kraut_erstellen) or die(mysqli_error($db));
+            $kraut_erstellen = "CREATE TABLE kraut(kra_id INTEGER NOT NULL AUTO_INCREMENT, name VARCHAR(1000), wirkung VARCHAR(2000), merkmal VARCHAR(2000), bild VARCHAR(100), PRIMARY KEY (kra_id)) ENGINE=InnoDB;";
+            mysqli_query($db, $kraut_erstellen) or die(mysqli_error($db));
             $i = 1;
             foreach ($TCM->kraeuter->kraut as $kraut) {
                 
@@ -44,11 +44,11 @@
             $kraut_query = "INSERT INTO kraut (kra_id, name, wirkung, merkmal, bild) VALUES ".implode(",",$kraut_tuple_array).";";
             //echo "<br>".$kraut_query;
             
-            //mysqli_query($db, $kraut_query) or die(mysqli_error($db));
+            mysqli_query($db, $kraut_query) or die(mysqli_error($db));
         
         /**Formeln**/
-            $formel_erstellen = "CREATE TABLE formel(for_id INTEGER NOT NULL AUTO_INCREMENT, name VARCHAR(100), anwendungsgebiet VARCHAR(200), wirkung VARCHAR(200), notiz VARCHAR(200), PRIMARY KEY (for_id)) ENGINE=InnoDB;";
-            //mysqli_query($db, $formel_erstellen) or die(mysqli_error($db));
+            $formel_erstellen = "CREATE TABLE formel(for_id INTEGER NOT NULL AUTO_INCREMENT, name VARCHAR(100), anwendungsgebiet VARCHAR(2000), wirkung VARCHAR(2000), notiz VARCHAR(2000), PRIMARY KEY (for_id)) ENGINE=InnoDB;";
+            mysqli_query($db, $formel_erstellen) or die(mysqli_error($db));
             $j = 1;
             foreach ($TCM->formeln->formel as $formel) {
             //    $name_array = array();
@@ -72,11 +72,11 @@
                 $j++;
             }
             $formel_query = "INSERT INTO formel (for_id, name, anwendungsgebiet, wirkung, notiz) VALUES ".implode(",",$formel_tuple_array).";";
-            //mysqli_query($db, $formel_query) or die(mysqli_error($db));
+            mysqli_query($db, $formel_query) or die(mysqli_error($db));
             
         /**Formelklassen**/
             $formelklasse_erstellen = "CREATE TABLE formelklasse (forkla_id INTEGER NOT NULL AUTO_INCREMENT, name VARCHAR(100), PRIMARY KEY(forkla_id)) ENGINE=InnoDB;";
-            //mysqli_query($db, $formelklasse_erstellen) or die(mysqli_error($db));
+            mysqli_query($db, $formelklasse_erstellen) or die(mysqli_error($db));
             
             $k = 1;
             foreach ($TCM->klassen->klasse as $klasse) {
@@ -84,7 +84,7 @@
                 $k++;
             }
             $formelklasse_query="INSERT INTO formelklasse (forkla_id, name) VALUES ".implode(",",$insert_formelklasse).";";
-            //mysqli_query($db, $formelklasse_query) or die(mysqli_error($db));
+            mysqli_query($db, $formelklasse_query) or die(mysqli_error($db));
             //echo $formelklasse_query; 
         ?>
             
