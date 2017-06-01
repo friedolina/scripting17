@@ -47,6 +47,6 @@ $(document).ready(function(){
 
 
 /** DROPDOWN MENU **/
-jQuery(document).on('click', '.mega-dropdown', function(e) {
-  e.stopPropagation()
-})
+/**jQuery(document).on('click', '.mega-dropdown', function(e) {
+/**  e.stopPropagation()
+})**/
