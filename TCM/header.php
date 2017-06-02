@@ -142,12 +142,10 @@
                                             foreach($result_kraut as $kraut) {
                                                 if (substr($kraut['name'], 0, 1) == $i) {
                                                     echo "<li>" . $kraut['name'] . "</li>";
-                                                } elseif (substr($kraut['name'], 0, 1) == FALSE) {
-                                                    echo "<li>Zwei</li>";
-                                                    echo "<li>Drei</li>";
                                                 }
                                             }
-                                        }
+                                            echo "</ul>";
+                                        } 
                                     }
                                 ?>
                               
