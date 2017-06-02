@@ -25,6 +25,7 @@
             $result_klasse = mysqli_query($db, $sql_klasse);
             
             $alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $alph_array = range('A', 'Z');
 
 ?>
         ?>
@@ -134,19 +135,27 @@
                           <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <?php
-                                      
+                                    echo "<div class='row'>";  
+                                    $j = 0;
                                     foreach(range('A','Z') as $i) {
-                                        if(strpos($alph, $i) !== FALSE) {
-                                            echo "<ul class='col-sm-2 list-unstyled'>";
-                                            echo "<h4>" . $i . "</h4>";
-                                            foreach($result_kraut as $kraut) {
-                                                if (substr($kraut['name'], 0, 1) == $i) {
-                                                    echo "<li>" . $kraut['name'] . "</li>";
+                                        if ($j % 6 == 0) {
+                                            echo "</div><div class='row'>";
+                                        }
+                                        //for ($j = 0; $j < 6; $j++) {
+                                            if(strpos($alph, $i) !== FALSE) {
+                                                echo "<ul class='col-sm-2 list-unstyled'>";
+                                                echo "<h4>" . $i . "</h4>";
+                                                $j++;
+                                                foreach($result_kraut as $kraut) {
+                                                    if (substr($kraut['name'], 0, 1) == $i) {
+                                                        echo "<li>" . $kraut['name'] . "</li>";
+                                                    }
                                                 }
+                                                echo "</ul>";
                                             }
-                                            echo "</ul>";
-                                        } 
+                                        //} 
                                     }
+                                    echo "</div>";
                                 ?>
                               
                             </div>
@@ -237,12 +246,12 @@
                 <li>
                   <div class="yamm-content">
                     <div class="row">
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src="demo/img/190.jpg"></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src="demo/img/190.jpg"></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src="demo/img/190.jpg"></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src="demo/img/190.jpg"></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src="demo/img/190.jpg"></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src="demo/img/190.jpg"></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
                     </div>
                   </div>
                 </li>
