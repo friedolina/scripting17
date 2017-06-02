@@ -4,21 +4,28 @@
             include 'connect.php';
             
             $sql_kraut = "SELECT
-            name
+            *
             FROM
             kraut";
             
             $result_kraut = mysqli_query($db, $sql_kraut);
             
             $sql_kat = "SELECT
-            name
+            *
              FROM 
             kategorie";
             
             $result_kat = mysqli_query($db, $sql_kat);
             
+            $sql_formel = "SELECT
+            *
+            FROM
+            formel";
+            
+            $result_formel = mysqli_query($db, $sql_formel);
+            
             $sql_klasse = "SELECT
-            name
+            *
             FROM
             formelklasse";
             
@@ -138,22 +145,20 @@
                                     echo "<div class='row'>";  
                                     $j = 0;
                                     foreach(range('A','Z') as $i) {
-                                        if ($j % 6 == 0) {
+                                        if ($j !== 0 && $j % 6 == 0) {
                                             echo "</div><div class='row'>";
                                         }
-                                        //for ($j = 0; $j < 6; $j++) {
-                                            if(strpos($alph, $i) !== FALSE) {
-                                                echo "<ul class='col-sm-2 list-unstyled'>";
-                                                echo "<h4>" . $i . "</h4>";
-                                                $j++;
-                                                foreach($result_kraut as $kraut) {
-                                                    if (substr($kraut['name'], 0, 1) == $i) {
-                                                        echo "<li>" . $kraut['name'] . "</li>";
-                                                    }
+                                        if(strpos($alph, $i) !== FALSE) {
+                                            echo "<ul class='col-sm-2 list-unstyled'>";
+                                            echo "<h4>" . $i . "</h4>";
+                                            $j++;
+                                            foreach($result_kraut as $kraut) {
+                                                if (substr($kraut['name'], 0, 1) == $i) {
+                                                    echo "<li><a href='/TCM/kraut/einzelkraut.php'>" . $kraut['name'] . "</a></li>";
                                                 }
-                                                echo "</ul>";
                                             }
-                                        //} 
+                                            echo "</ul>";
+                                        }
                                     }
                                     echo "</div>";
                                 ?>
@@ -189,17 +194,25 @@
                           <div id="collapseThree" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <?php
-                                      
+                                    echo "<div class='row'>";  
+                                    $j = 0;
                                     foreach(range('A','Z') as $i) {
+                                        if ($j !== 0 && $j % 6 == 0) {
+                                            echo "</div><div class='row'>";
+                                        }
                                         if(strpos($alph, $i) !== FALSE) {
                                             echo "<ul class='col-sm-2 list-unstyled'>";
                                             echo "<h4>" . $i . "</h4>";
-                                            echo "<li>Eins</li>";
-                                            echo "<li>Zwei</li>";
-                                            echo "<li>Drei</li>";
+                                            $j++;
+                                            foreach($result_formel as $formel) {
+                                                if (substr($formel['name'], 0, 1) == $i) {
+                                                    echo "<li>" . $formel['name'] . "</li>";
+                                                }
+                                            }
                                             echo "</ul>";
                                         }
                                     }
+                                    echo "</div>";
                                 ?>
                             </div>
                           </div>
@@ -258,14 +271,14 @@
               </ul>
             </li>
           </ul>
-                  <form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php">
-                            <div class="form-group">
-                                <!--label for="input_search"></label-->
-                                <input type="text" class="form-control" required="required" name="search_form" maxlength="150" placeholder="Suche...">
-                                <!--span class="help-block"></span-->
-                                <button type="submit" class="btn btn-default" name="submit" >Suche</button>
-
-                            </div>
+          <form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php">
+                <div class="form-group">
+                    <!--label for="input_search"></label-->
+                    <input type="text" class="form-control" name="search_form" maxlength="150" placeholder="Suche...">
+                    <!--span class="help-block"></span-->
+                    <button type="submit" class="btn btn-default" name="submit" >Suche</button>
+                </div>
+            </form>
         </div>
       </div>
     </div>
