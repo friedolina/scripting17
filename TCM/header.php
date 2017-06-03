@@ -153,7 +153,6 @@
                                             echo "<h4>" . $i . "</h4>";
                                             $j++;
                                             foreach($result_kraut as $kraut) {
-                                            //    $_kraut = $kraut['name'];
                                                 if (substr($kraut['name'], 0, 1) == $i) {
                                                     echo "<li><a href='/TCM/kraut/einzelkraut.php?kraut=" . $kraut['name'] . "'>" . $kraut['name'] . "</a></li>";
                                                 }
@@ -286,4 +285,4 @@
         
         <div id="content_container">
             
-            <div id="header"><h1>TCM-Kräuterlexikon</h1></div>
+            <!--div id="header"><h1>TCM-Kräuterlexikon</h1></div-->

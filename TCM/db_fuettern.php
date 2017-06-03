@@ -38,7 +38,7 @@
                 foreach ($kraut->merkmal as $merkmal) {
                     $merkmal_array[] = $merkmal;
                 }
-                $kraut_tuple_array[] = "(".$i.",'".$kraut->name."','".implode(" -- ",$krautwirkung_array)."','".implode(" -- ",$merkmal_array)."','".$kraut->bild['quelle']."')";
+                $kraut_tuple_array[] = "(".$i.",'".$kraut->name."','".implode("#-#-#",$krautwirkung_array)."','".implode("#-#-#",$merkmal_array)."','".$kraut->bild['quelle']."')";
                 $i++;
             }
             $kraut_query = "INSERT INTO kraut (kra_id, name, wirkung, merkmal, bild) VALUES ".implode(",",$kraut_tuple_array).";";
@@ -68,7 +68,7 @@
                     $notiz_array[] = $notiz;
                     
                 }
-                $formel_tuple_array[] = "(".$j.",'".$formel->name."','".implode(" -- ",$anwendungsgebiet_array)."','".implode(" -- ",$formelwirkung_array)."','".implode(" -- ",$notiz_array)."')";
+                $formel_tuple_array[] = "(".$j.",'".$formel->name."','".implode("#-#-#",$anwendungsgebiet_array)."','".implode("#-#-#",$formelwirkung_array)."','".implode("#-#-#",$notiz_array)."')";
                 $j++;
             }
             $formel_query = "INSERT INTO formel (for_id, name, anwendungsgebiet, wirkung, notiz) VALUES ".implode(",",$formel_tuple_array).";";

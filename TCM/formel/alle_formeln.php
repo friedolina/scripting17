@@ -19,9 +19,9 @@ while ( $tuple = mysqli_fetch_assoc($result)) {
     echo "<form class='entry' id=formel" . $tuple['for_id'] . ">";
     echo "<div id='show_entry_" . $tuple['for_id'] . "'>";
     echo "<h3>" . $tuple['name'] . "</h3><input class='bearbeiten' type ='button' value='Bearbeiten' onClick='formelBearbeiten(this);'>";
-    echo "<h4>Anwendungsgebiet</h4><li>" . str_replace(" -- ","</li><li>",$tuple['anwendungsgebiet']) . "</li>";
-    echo "<h4>Wirkung</h4><li>" . str_replace(" -- ","</li><li>",$tuple['wirkung']) . "</li>";
-    echo "<h4>Notiz</h4><li>" . str_replace(" -- ","</li><li>",$tuple['notiz']) . "</li>";
+    echo "<h4>Anwendungsgebiet</h4><li>" . str_replace("#-#-#","</li><li>",$tuple['anwendungsgebiet']) . "</li>";
+    echo "<h4>Wirkung</h4><li>" . str_replace("#-#-#","</li><li>",$tuple['wirkung']) . "</li>";
+    echo "<h4>Notiz</h4><li>" . str_replace("#-#-#","</li><li>",$tuple['notiz']) . "</li>";
     echo "</div>";
 
 /**    echo "<div id='change_entry_" . $tuple['for_id'] . "'>";

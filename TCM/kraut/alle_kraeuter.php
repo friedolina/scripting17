@@ -19,10 +19,10 @@ while ( $tuple = mysqli_fetch_assoc($result)) {
     echo "<ul>";
     echo "<h3>" . $tuple["kra_id"] . ". " . $tuple["name"] . "</h3>";
     if ( $tuple['wirkung'] == true) {
-        echo "<li>" . str_replace(" -- ","</li><li>",$tuple["wirkung"]) . "</li>";
+        echo "<li>" . str_replace("#-#-#","</li><li>",$tuple["wirkung"]) . "</li>";
     }
     if ($tuple['merkmal'] == true) {
-        echo "<li>" . str_replace(" -- ","</li><li>",$tuple["merkmal"]) . "</li>";
+        echo "<li>" . str_replace("#-#-#","</li><li>",$tuple["merkmal"]) . "</li>";
     }
     if ($tuple['bild'] == true) {
         echo "<img src='/TCM/images/" . $tuple["bild"] . "' />";

@@ -6,9 +6,10 @@ body p, input {
     display: inline-block;
     margin: 10px;
 }
-#header{
+#header,
+#headline{
   margin-top: 75px;
-  text-align: center;
+/**  text-align: center; **/
 }
 .back-to-top {
     display: none; /* Hidden by default */
