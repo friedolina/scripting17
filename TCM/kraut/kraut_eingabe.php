@@ -7,6 +7,12 @@
 <form action="kraut_ausgabe.php" method="post">
     <h4>Name: </h4>
     <input class="eingabe" type="text" name="kraut_name"/>
+    
+    <div id="dynamicAlternativname">
+        <h4>Weitere Bezeichnung: </h4>
+        <input class="eingabe" type="text" name="kraut_alternativname[]">
+        <input class="plusbutton" type="button" value="+" onClick="addInput('Weitere Bezeichnung', 'dynamicAlternativname', 'kraut_alternativname[]');">
+    </div>
                
     <div id="dynamicWirkung">
         <h4>Wirkung: </h4>

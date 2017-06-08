@@ -2,6 +2,8 @@
     include '../header.php';
     
     $kraut_name = $_POST["kraut_name"];
+    $kraut_alternativname = $_POST["kraut_alternativname"];
+    $kraut_alternativname_array = implode("#-#-#", $kraut_alternativname);
     //$kraut_wirkung = $_POST["kraut_wirkung"];
     //$kraut_merkmal = $_POST["kraut_merkmal"];
     $kraut_wirkungen = $_POST["kraut_wirkungen"];
@@ -15,12 +17,14 @@
     $sql = "INSERT INTO kraut
             (
                 name,
+                alternativname,
                 wirkung,
                 merkmal
             )
             VALUES
             (
                 '$kraut_name',
+                '$kraut_alternativname_array',
                 '$kraut_wirkungen_array',
                 '$kraut_merkmale_array'
             )";
@@ -41,9 +45,18 @@
     
     <div id="headline"><h1><?php echo $kraut_name ?></h1></div>
     
-    <div id="content">
+    <?php
     
-        <h3>Merkmal und Wirkung</h3>
+    if ($kraut_alternativname == true) {
+        echo "<h4>Weitere Bezeichnungen:</h4>";
+        foreach ($kraut_alternativname as $eachAlternativname) {
+            echo "<li>" . $eachAlternativname . "</li>"   ;
+        }
+    }
+    ?>
+    
+
+        <h4>Merkmal und Wirkung</h4>
     
         <?php    
 
@@ -55,7 +68,7 @@
             }
         ?>
         
-        <h3>Kategorie</h3>    
+        <h4>Kategorie</h4>    
         
         <?php
 
@@ -79,7 +92,6 @@
             <input type="submit" value="Alle Kräuter anzeigen" />
         </form>
     
-    </div>
 <?php    
     include '../footer.php';
 ?>

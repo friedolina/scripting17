@@ -16,7 +16,12 @@
     
     //echo $_GET['kraut'];
     echo "<div id='headline'><h1>" . $einzelkraut['name'] . "</h1></div>";
-    //echo "<h3>" . $kraut["kra_id"] . ". " . $kraut["name"] . "</h3>";
+    if ( $einzelkraut['alternativname'] == true) {
+        echo "<h4>Weitere Bezeichnungen</h4>";
+        echo "<ul>";
+        echo "<li>" . str_replace("#-#-#","</li><li>",$einzelkraut["alternativname"]) . "</li>";
+        echo "</ul>";
+    }
     if ( $einzelkraut['wirkung'] == true) {
         echo "<h4>Wirkung</h4>";
         echo "<ul>";
