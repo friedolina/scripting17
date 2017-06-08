@@ -2,7 +2,7 @@
     include '../header.php';
 ?>
     
-    <div id="headline"><h2>Kraut-Eingabe</h2></div>
+    <div id="headline"><h1>Kraut-Eingabe</h1></div>
     
     <div id="content">
         <form action="kraut_ausgabe.php" method="post">

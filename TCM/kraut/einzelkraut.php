@@ -6,11 +6,11 @@
                     FROM
                     kraut
                     WHERE
-                    name = '" . $_GET['kraut'] . "';";
+                    kra_id = '" . $_GET['kraut'] . "';";
     //echo $sql_einzelkraut;
     
     $result_einzelkraut = mysqli_query($db,$sql_einzelkraut);
-    $einzelkraut=mysqli_fetch_array($result_einzelkraut);
+    $einzelkraut = mysqli_fetch_array($result_einzelkraut);
     
     //echo $einzelkraut['name'];
     

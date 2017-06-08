@@ -8,3 +8,15 @@ starte phpMyAdmin:
 https://semesterproject-frieda.c9users.io/phpmyadmin 
 
 https://semesterproject-frieda.c9users.io/
+
+krautangehoerigkeit erstellen:
+create table kategorieangehoerigkeit (
+    angehoerigkeit_id integer not null auto_increment,
+    kat_id integer not null,
+    kra_id integer not null,
+    primary key (angehoerigkeit_id),
+    foreign key (kat_id) references kategorie(kat_id),
+    foreign key (kra_id) references kraut(kra_id)
+    ON DELETE CASCADE
+    ) engine=InnoDB;
+    

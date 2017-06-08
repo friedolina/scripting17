@@ -4,28 +4,28 @@
             include 'connect.php';
             
             $sql_kraut = "SELECT
-            *
+            name, kra_id
             FROM
             kraut";
             
             $result_kraut = mysqli_query($db, $sql_kraut);
             
             $sql_kat = "SELECT
-            *
+            name, kat_id
              FROM 
             kategorie";
             
             $result_kat = mysqli_query($db, $sql_kat);
             
             $sql_formel = "SELECT
-            *
+            name, for_id
             FROM
             formel";
             
             $result_formel = mysqli_query($db, $sql_formel);
             
             $sql_klasse = "SELECT
-            *
+            name, forkla_id
             FROM
             formelklasse";
             
@@ -34,7 +34,6 @@
             $alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             $alph_array = range('A', 'Z');
 
-?>
         ?>
 <html>
     <head>
@@ -54,8 +53,6 @@
     </head>    
     <body>
         
-    <!-- VERSUCH MEGA MENU + MULTILEVEL MENU -->
-    
      <!-- Demo navbar -->
     <div class="navbar yamm navbar-default navbar-fixed-top">
       <div class="container">
@@ -154,7 +151,7 @@
                                             $j++;
                                             foreach($result_kraut as $kraut) {
                                                 if (substr($kraut['name'], 0, 1) == $i) {
-                                                    echo "<li><a href='/TCM/kraut/einzelkraut.php?kraut=" . $kraut['name'] . "'>" . $kraut['name'] . "</a></li>";
+                                                    echo "<li><a href='/TCM/kraut/einzelkraut.php?kraut=" . $kraut['kra_id'] . "'>" . $kraut['name'] . "</a></li>";
                                                 }
                                             }
                                             echo "</ul>";
@@ -244,13 +241,13 @@
               </ul>
             </li>
             <!-- Classic dropdown -->
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Classic<b class="caret"></b></a>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Hinzufügen<b class="caret"></b></a>
               <ul role="menu" class="dropdown-menu">
-                <li><a tabindex="-1" href="#"> Action </a></li>
-                <li><a tabindex="-1" href="#"> Another action </a></li>
-                <li><a tabindex="-1" href="#"> Something else here </a></li>
-                <li class="divider"></li>
-                <li><a tabindex="-1" href="#"> Separated link </a></li>
+                <li><a href="/TCM/kraut/kraut_eingabe.php">Kraut</a></li>
+                <li><a href="/TCM/kraut/kategorie_eingabe.php">Krautkategorie</a></li>
+                <li><a href="/TCM/formel/formel_eingabe.php">Formel</a></li>
+                <!--li class="divider"></li-->
+                <li><a href="/TCM/formel/klasse_eingabe.php">Formelklasse</a></li>
               </ul>
             </li>
             <!-- Pictures -->

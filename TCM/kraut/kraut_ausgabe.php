@@ -5,9 +5,9 @@
     //$kraut_wirkung = $_POST["kraut_wirkung"];
     //$kraut_merkmal = $_POST["kraut_merkmal"];
     $kraut_wirkungen = $_POST["kraut_wirkungen"];
-    $kraut_wirkungen_array = implode(" -- ", $kraut_wirkungen);
+    $kraut_wirkungen_array = implode("#-#-#", $kraut_wirkungen);
     $kraut_merkmale = $_POST["kraut_merkmale"];
-    $kraut_merkmale_array = implode(" -- ", $kraut_merkmale);
+    $kraut_merkmale_array = implode("#-#-#", $kraut_merkmale);
 
     
     $sql = "INSERT INTO kraut
