@@ -2,35 +2,25 @@
     include '../header.php';
 ?>
     
-<div id="headline"><h2>Neue Kategorie</h2></div>
+<div id="headline"><h1>Neue Kategorie</h1></div>
 
 <form action="kategorie_ausgabe.php" method="post">
-    <ul>
-        <li>Name: <input type="text" name="kategorie_name"/></li>
+    <h4>Name: </h4><input class="eingabe" type="text" name="kategorie_name"/>
                
-        <li>Kräuter:</li>
-            <select name="kat_kraut[]" multiple>
-                <?php
-                foreach($result_kraut as $kraut) {
-                    echo "<option value='" . $kraut['kra_id'] . "'>" . $kraut['name'] . "</option>";
-                }
-                ?>
-            </select>
+    <h4>Kräuter:</h4>
+    <select name="kat_kraut[]" multiple>
+        <?php
+            foreach($result_kraut as $kraut) {
+                echo "<option value='" . $kraut['kra_id'] . "'>" . $kraut['name'] . "</option>";
+            }
+        ?>
+    </select>
 
-    </ul>
-            
     <input type="submit" value="Speichern"/>
     <input type="reset" value="Zurücksetzen"/>
             
 </form>
-<!--form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
-    <input type="submit" value="Alle Kräuter anzeigen" />
-</form-->
 
-
-
-
-    
 <?php
     include '../footer.php';
 ?>

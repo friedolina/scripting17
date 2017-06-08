@@ -2,15 +2,16 @@ body {
     font-family: 'Playfair Display', serif;
      /**font-size: 24pt;**/
 }
-body p, input {
+body p, input, select {
     display: inline-block;
     margin: 10px;
 }
-#header,
-#headline{
-  margin-top: 75px;
-/**  text-align: center; **/
+
+.eingabe, select {
+  width: 80%;
+  min-width: 200px;
 }
+
 .back-to-top {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -28,6 +29,7 @@ body p, input {
 #content_container {
     width:50%;
     margin: auto;
+    margin-top: 100px
 }
 #content_container img {
     padding: 5% 2%;

@@ -2,36 +2,42 @@
     include '../header.php';
 ?>
     
-    <div id="headline"><h1>Kraut-Eingabe</h1></div>
+<div id="headline"><h1>Neues Kraut</h1></div>
     
-    <div id="content">
-        <form action="kraut_ausgabe.php" method="post">
-            <li>Name: <input type="text" name="kraut_name"/></li>
-           
-            <div id="dynamicWirkung">
-                <li>Wirkung: <input type="text" name="kraut_wirkungen[]"></li>
-            </div>
-           
-            <input type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'kraut_wirkungen[]');">
-           
-            <div id="dynamicMerkmal">
-                <li>Merkmal: <input type="text" name="kraut_merkmale[]"/></li> 
-            </div>
-            
-            <input type="button" value="+" onClick="addInput('Merkmal', 'dynamicMerkmal', 'kraut_merkmale[]');">
-            
-            <li>Bild: </li>
-            
-            <input type="submit" value="Speichern"/>
-            <input type="reset" value="Zurücksetzen"/>
-            
-        </form>
-        <form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
-            <input type="submit" value="Alle Kräuter anzeigen" />
-        </form>
-
+<form action="kraut_ausgabe.php" method="post">
+    <h4>Name: </h4>
+    <input class="eingabe" type="text" name="kraut_name"/>
+               
+    <div id="dynamicWirkung">
+        <h4>Wirkung: </h4>
+        <input class="eingabe" type="text" name="kraut_wirkungen[]">
+        <input class="plusbutton" type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'kraut_wirkungen[]');">
     </div>
     
+    <div id="dynamicMerkmal">
+        <h4>Merkmal: </h4>
+        <input class="eingabe" type="text" name="kraut_merkmale[]"/>
+        <input class="plusbutton" type="button" value="+" onClick="addInput('Merkmal', 'dynamicMerkmal', 'kraut_merkmale[]');">
+    </div>
+                
+    <h4>Kategorie:</h4>
+    <select name="kraut_kat[]" multiple>
+        <?php
+            foreach($result_kat as $kat) {
+                echo "<option value='" . $kat['kat_id'] . "'>" . $kat['name'] . "</option>";
+            }
+        ?>
+    </select>
+                
+    <h4>Bild: </h4>
+    <input type="submit" value="Speichern"/>
+    <input type="reset" value="Zurücksetzen"/>
+            
+</form>
+<form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
+    <input type="submit" value="Alle Kräuter anzeigen" />
+</form>
+
 <?php    
     include '../footer.php';
 ?>

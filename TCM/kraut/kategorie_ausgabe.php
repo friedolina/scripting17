@@ -24,7 +24,7 @@ foreach ($kat_kraut_id as $kraut_id) {
     mysqli_query($db, $sql_angehoerigkeit);
 }
 
-echo "<div id='headline'><h2>" . $kategorie_name . "</h2></div>";
+echo "<div id='headline'><h1>" . $kategorie_name . "</h1></div>";
 
 echo "<ul>";
 foreach ($kat_kraut_id as $kraut_id) {
