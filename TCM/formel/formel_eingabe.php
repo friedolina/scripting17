@@ -4,35 +4,43 @@
     
     <div id="headline"><h2>Formel-Eingabe</h2></div>
     
-    <div id="content">
         <form action="formel_ausgabe.php" method="post">
-            <li>Name: <input type="text" name="formel_name"/></li>
+            <h4>Name: </h4>
+            <input class="eingabe" type="text" name="formel_name"/>
            
             <div id="dynamicAnwendungsgebiet">
-                <li>Anwendungsgebiet: <input type="text" name="formel_anwendungsgebiete[]"></li>
+                <h4>Anwendungsgebiet: </h4>
+                <input class="eingabe" type="text" name="formel_anwendungsgebiete[]">
+                <input class="plusbutton" type="button" value="+" onClick="addInput('Anwendungsgebiet', 'dynamicAnwendungsgebiet', 'formel_anwendungsgebiete[]');">
+
             </div>
-           
-            <input type="button" value="+" onClick="addInput('Anwendungsgebiet', 'dynamicAnwendungsgebiet', 'formel_anwendungsgebiete[]');">
-           
+
             <div id="dynamicWirkung">
-                <li>Wirkung: <input type="text" name="formel_wirkungen[]"></li>
+                <h4>Wirkung: </h4>
+                <input class="eingabe" type="text" name="formel_wirkungen[]">
+               <input class="plusbutton" type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'formel_wirkungen[]');">
             </div>
            
-            <input type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'formel_wirkungen[]');">
-            
             <div id="dynamicNotiz">
-                <li>Notiz: <input type="text" name="formel_notizen[]"></li>
+                <h4>Notiz: </h4>
+                <input class="eingabe" type="text" name="formel_notizen[]">
+                <input class="plusbutton" type="button" value="+" onClick="addInput('Notiz', 'dynamicNotiz', 'formel_notizen[]');">
             </div>
-           
-            <input type="button" value="+" onClick="addInput('Notiz', 'dynamicNotiz', 'formel_notizen[]');">
             
+            <h4>Klasse:</h4>
+            <select name="formel_klasse[]" multiple>
+                <?php
+                    foreach($result_klasse as $kla) {
+                        echo "<option value='" . $kla['kla_id'] . "'>" . $kla['name'] . "</option>";
+                    }
+                ?>
+            </select>
+           
             <input type="submit" value="Speichern"/>
             <input type="reset" value="Zurücksetzen"/>
             
         </form>
         
-    </div>
-    
 <?php    
     include '../footer.php';
 ?>

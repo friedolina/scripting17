@@ -12,9 +12,6 @@
     $result_einzelkraut = mysqli_query($db,$sql_einzelkraut);
     $einzelkraut = mysqli_fetch_array($result_einzelkraut);
     
-    //echo $einzelkraut['name'];
-    
-    //echo $_GET['kraut'];
     echo "<div id='headline'><h1>" . $einzelkraut['name'] . "</h1></div>";
     if ( $einzelkraut['alternativname'] == true) {
         echo "<h4>Weitere Bezeichnungen</h4>";

@@ -6,32 +6,28 @@
             $sql_kraut = "SELECT
             name, kra_id
             FROM
-            kraut";
+            kraut ORDER BY name ASC";
             
             $result_kraut = mysqli_query($db, $sql_kraut);
             
             $sql_kat = "SELECT
             name, kat_id
              FROM 
-            kategorie";
+            kategorie ORDER BY name ASC";
             
             $result_kat = mysqli_query($db, $sql_kat);
-            
-            //$sql_kat_angehoerigkeit = "SELECT kra_id, kat_id FROM kategorieangehoerigkeit;";
-            
-            //$result_kat_angehoerigkeit = mysqli_query($db, $sql_kat_angehoerigkeit);
-            
+
             $sql_formel = "SELECT
             name, for_id
             FROM
-            formel";
+            formel ORDER BY name ASC ";
             
             $result_formel = mysqli_query($db, $sql_formel);
             
             $sql_klasse = "SELECT
-            name, forkla_id
+            name, kla_id
             FROM
-            formelklasse";
+            klasse ORDER BY name ASC";
             
             $result_klasse = mysqli_query($db, $sql_klasse);
             
@@ -118,7 +114,7 @@
                           </div>
                           <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
-                              <?php
+                                <?php
                                     echo "<div class='row'>";  
                                     $j = 0;
                                     foreach($result_kat as $kat) {
@@ -151,6 +147,7 @@
                             </div>
                           </div>
                         </div>
+                        <!-- FORMELN ALPHABETISCH -->
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Alle Formeln alphabetisch</a></h4>
@@ -170,7 +167,8 @@
                                             $j++;
                                             foreach($result_formel as $formel) {
                                                 if (substr($formel['name'], 0, 1) == $i) {
-                                                    echo "<li>" . $formel['name'] . "</li>";
+                                                echo "<li><a href='/TCM/formel/einzelformel.php?formel=" . $formel['for_id'] . "'>" . $formel['name'] . "</a></li>";
+
                                                 }
                                             }
                                             echo "</ul>";
@@ -181,22 +179,41 @@
                             </div>
                           </div>
                         </div>
+                        <!-- FORMELN KLASSEN -->
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Alle Formeln nach Klassen</a></h4>
                           </div>
                           <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
-                              <?php
-                                  while ( $klasse = mysqli_fetch_assoc($result_klasse)) {
-                                    echo "<ul class='col-sm-2 list-unstyled'>";
-                                    echo "<li><h4>" . $klasse[name] . "</h4></li>";
-                                    echo "<li>Eins</li>";
-                                    echo "<li>Zwei</li>";
-                                    echo "<li>Drei</li>";
-                                    echo "</ul>";
+                                <?php
+                                    echo "<div class='row'>";  
+                                    $j = 0;
+                                    foreach($result_klasse as $kla) {
+                                        
+                                        $sql_angehoerigkeit_id = "SELECT for_id FROM klassenangehoerigkeit WHERE kla_id = " . $kla['kla_id'] . ";";
+                                        $result_angehoerigkeit_id = mysqli_query($db, $sql_angehoerigkeit_id) or die(mysqli_error($db));  
+                                        
+                                        if ($j !== 0 && $j % 6 == 0) {
+                                            echo "</div><div class='row'>";
+                                        }
+                                        
+                                        echo "<ul class='col-sm-2 list-unstyled'>";
+                                        echo "<h4>" . $kla['name'] . "</h4>";
+                                        $j++;
+                                        foreach($result_angehoerigkeit_id as $angehoerigkeit_id) {
+                                            $sql_angehoerigkeit_name = "SELECT name FROM formel WHERE for_id = " . $angehoerigkeit_id['for_id'] . ";";
+                                            $result_angehoerigkeit_name = mysqli_query($db, $sql_angehoerigkeit_name) or die(mysqli_error($db));
+                                            $angehoerigkeit_name = mysqli_fetch_array($result_angehoerigkeit_name) or die(mysqli_error($db));
+
+                                            echo "<li><a href='/TCM/formel/einzelformel.php?formel=" . $angehoerigkeit_id['for_id'] . "'>" . $angehoerigkeit_name['name'] . "</a></li>";
+                                        }
+                                        echo "</ul>";
+                                    }
                                     
-                                  }
+                                    echo "</div>";
+                                    
+                            
                                 ?>
                             </div>
                           </div>

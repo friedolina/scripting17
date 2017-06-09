@@ -9,7 +9,7 @@ https://semesterproject-frieda.c9users.io/phpmyadmin
 
 https://semesterproject-frieda.c9users.io/
 
-krautangehoerigkeit erstellen:
+krautkategorieangehoerigkeit erstellen:
 create table kategorieangehoerigkeit (
     angehoerigkeit_id integer not null auto_increment,
     kat_id integer not null,
@@ -20,3 +20,24 @@ create table kategorieangehoerigkeit (
     ON DELETE CASCADE
     ) engine=InnoDB;
     
+formelklasseangehoerigkeit erstellen:
+create table klassenangehoerigkeit (
+    klassenangehoerigkeit_id integer not null auto_increment,
+    kla_id integer not null,
+    for_id integer not null,
+    primary key (klassenangehoerigkeit_id),
+    foreign key (kla_id) references klasse(kla_id),
+    foreign key (for_id) references formel(for_id)
+    ON DELETE CASCADE
+    ) engine=InnoDB;
+    
+formelklassen erstellen:
+create table klasse (
+    kla_id integer not null auto_increment,
+    name_id varchar(200),
+    primary key (kla_id)
+    ) engine=InnoDB;
+    
+    
+Auto-Vervollständigung/Suche:
+http://blog.simplease.at/2011/08/ajax-leicht-gemacht/
