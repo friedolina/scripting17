@@ -131,3 +131,39 @@ select[multiple], select[size] {
   height: 200px;
 }
 
+#search_form {
+  position: relative;
+  width: 30%;
+}
+
+#searchField {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0 !important;
+}
+#responsecontainer {
+  /**display: none;**/
+  position:absolute; 
+  top:40px;
+  background: #fff;
+  width: 100%;
+  max-width: 300px;
+  -webkit-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
+  -moz-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
+  box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
+}
+#responsecontainer ul {
+  margin: 10px;
+  padding: 0;
+}
+#responsecontainer li {
+    list-style: none;
+    margin: 5px;
+}
+
+.navbar-default {
+  border-color: none !important;
+  -webkit-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
+  -moz-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
+  box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
+}

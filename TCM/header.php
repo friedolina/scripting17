@@ -234,30 +234,15 @@
                 <li><a href="/TCM/formel/klasse_eingabe.php">Formelklasse</a></li>
               </ul>
             </li>
-            <!-- Pictures -->
-            <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pictures<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <div class="yamm-content">
-                    <div class="row">
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
-                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
           </ul>
 
-          <form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php">
+          <!--form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php"-->
                 <!--div class="form-group"-->
                     <!--label for="input_search"></label-->
+                <form class="navbar-left" id="search_form">
                     <input type="text" id="searchField" name="search_form" maxlength="150" placeholder="Suche...">
-                    <button type="submit" class="btn btn-default" name="submit" >Suche</button>
+                    <!--button type="submit" class="btn btn-default" name="submit" >Suche</button-->
+                    <div id="responsecontainer"></div>
                     
                 <!--/div-->
             </form>

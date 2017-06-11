@@ -236,3 +236,21 @@
                 </li>
               </ul>
             </li-->
+            
+                        <!-- Pictures -->
+            <!--li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Pictures<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div class="yamm-content">
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                      <div class="col-xs-6 col-sm-2"><a href="#" class="thumbnail"><img alt="150x190" src=""></a></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li-->
