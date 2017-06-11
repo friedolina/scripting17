@@ -252,11 +252,13 @@
               </ul>
             </li>
           </ul>
+
           <form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php">
                 <!--div class="form-group"-->
                     <!--label for="input_search"></label-->
                     <input type="text" id="searchField" name="search_form" maxlength="150" placeholder="Suche...">
                     <button type="submit" class="btn btn-default" name="submit" >Suche</button>
+                    
                 <!--/div-->
             </form>
         </div>

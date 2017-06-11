@@ -1,7 +1,7 @@
 <?php 
     include 'header.php';
 ?>
-                    <div id="responsecontainer"></div>
+<div id="responsecontainer"></div>
 
 
 <?php

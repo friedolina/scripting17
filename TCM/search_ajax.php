@@ -2,51 +2,30 @@
 <?php
 
 include 'connect.php';
-
+                    
+$field1 = "name";
+$table1 = "kraut";
+$table2 = "formel";
 $searchString = $_GET['searchString'];
-$result = mysqli_query($db,"select name from kraut WHERE name LIKE '%$searchString%'") or die(mysqli_error($db));
+$sql_ajax = "(SELECT $field1 FROM $table1 WHERE name LIKE '%$searchString%')
+               UNION ALL
+                (SELECT $field1 FROM $table2 WHERE name LIKE '%$searchString%');";
+$result_ajax = mysqli_query($db,$sql_ajax) or die(mysqli_error($db));
 
-$data = mysqli_fetch_array($result);
-
-$result_out = "<ul>";
+$output = "<ul>";
 
 if($searchString != "") {
  
-	  for($i=0; $i < count($data); $i++) {
-        $found = stristr($data[$i],$searchString);
-     
-    	if($found) {
-    		$result_out .= "<li>".$data[$i]."</li>";
-    	}
-	  }
+	foreach($result_ajax as $data) {
+
+        if(stristr($data[$field1],$searchString)) {
+        	$output .= "<li>".$data[$field1] ."</li>";
+        }
+	}
 }
 
-$result_out .= "</ul>";
-echo $result_out;
-
-
-/**
-echo "<table border='1' >
-<tr>
-<td align=center> <b>Kraut-ID</b></td>
-<td align=center><b>Name</b></td>
-<td align=center><b>Address</b></td>
-<td align=center><b>Stream</b></td></td>
-<td align=center><b>Status</b></td>";
-
-while($data = mysqli_fetch_row($result))
-{   
-    echo "<tr>";
-    echo "<td align=center>$data[0]</td>";
-    echo "<td align=center>$data[1]</td>";
-    echo "<td align=center>$data[2]</td>";
-    echo "<td align=center>$data[3]</td>";
-    echo "<td align=center>$data[4]</td>";
-    echo "</tr>";
-}
-echo "</table>";
-**/
-
+$output .= "</ul>";
+echo $output;
 
 include 'footer.php';
 ?>

@@ -5,20 +5,18 @@
 //<div id="headline"><h1>Suchergebnisse</h1></div>
     
     //$search_form_output  = $_GET['search_form'];
-    $sql_suche_kraut = "SELECT
-                    *
-                    FROM
-                    kraut
-                    WHERE
-                    name = '" . $_POST['search_form'] . "';";
-    echo $sql_suche_kraut;
-    $result_suche_kraut = mysqli_query($db,$sql_suche_kraut);
-    $suche_kraut=mysqli_fetch_array($result_suche_kraut);
+    $sql_suche = "(SELECT *, 'kraut' as type FROM kraut WHERE name LIKE '%" . $_POST['search_form'] . "%');";
+                    //    UNION ALL
+                    //    (SELECT * FROM formel WHERE name LIKE '%" . $_POST['search_form'] . "%')
+    $result_suche = mysqli_query($db,$sql_suche) or die(mysqli_error($db));
+    $suche_kraut = mysqli_fetch_array($result_suche) or die(mysqli_error($db));
     
-    if (mysqli_num_rows($result_suche_kraut) == 0) {
-        echo "<h5>Kraut nicht gefunden.</h5>";
+    if (mysqli_num_rows($result_suche) == 0) {
+        echo "<h5>Suchbegriff nicht gefunden.</h5>";
         echo "<br>";
-    } else {
+    } 
+    /**
+    elseif (mysqli_num_rows($result_suche) == 1) {
         echo "<div id='headline'><h1>" . $suche_kraut['name'] . "</h1></div>";
     //echo "<h3>" . $kraut["kra_id"] . ". " . $kraut["name"] . "</h3>";
         if ( $suche_kraut['wirkung'] == true) {
@@ -37,6 +35,17 @@
             echo "<h4>Bild</h4>";
             echo "<img src='/TCM/images/" . $suche_kraut["bild"] . "' />";
         }
+        echo "</ul>";
+    }
+        **/
+    else {
+        echo "<h1>Suchergebnisse</h1>";
+        echo "<ul>";
+        
+        foreach ($result_suche as $ergebnis) {
+            echo "<li><a href='/TCM/kraut/einzelkraut.php?kraut=" . $ergebnis['kra_id'] . "'>" . $ergebnis['name'] . "</a></li>";
+        }
+        unset($ergebnis);
         echo "</ul>";
     }
     
