@@ -43,5 +43,5 @@ if(strlen($searchString) >= 1) {
 $output .= $output_kraut . $output_formel . "</ul>";
 echo $output;
 
-include 'footer.php';
+
 ?>

@@ -242,7 +242,7 @@
                 <form class="navbar-form navbar-left" id="search_form">
                     <input type="text" id="searchField" name="search_form" maxlength="150" placeholder="Suche...">
                     <!--button type="submit" class="btn btn-default" name="submit" >Suche</button-->
-                    <div id="responsecontainer" class="scrollable-menu"></div>
+                    <div id="responsecontainer" class="scrollable-menu responsecontainer"></div>
                     
                 <!--/div-->
             </form>

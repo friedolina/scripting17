@@ -26,6 +26,11 @@
                 <input class="eingabe" type="text" name="formel_notizen[]">
                 <input class="plusbutton" type="button" value="+" onClick="addInput('Notiz', 'dynamicNotiz', 'formel_notizen[]');">
             </div>
+            <div id="kraut_auswahl">
+                <h4>Bestandteile</h4>
+                <input class="eingabe" type="text" id="formel_eingabe" name="formel_eingabe" maxlength="150" placeholder="Kraut...">
+                <div id="formel_response" class="scrollable-menu responsecontainer"></div>
+            </div>
             
             <h4>Klasse:</h4>
             <select name="formel_klasse[]" multiple>

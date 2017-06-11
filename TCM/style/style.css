@@ -136,20 +136,27 @@ select[multiple], select[size] {
   height: 200px;
 }
 
-#search_form {
-  position: relative;
-/*  width: 30%; */
-}
-
 #searchField {
   /**width: 100%;**/
   width: 300px; 
   margin: 10px 0 !important;
 }
-#responsecontainer {
+#search_form,
+#kraut_auswahl {
+  position: relative;
+/*  width: 30%; */
+}
+#responsecontainer,
+#formel_response {
   /**display: none;**/
   position:absolute; 
-  top:40px;
+  width:80%;
+  margin-left:10px;
+}
+#formel_response {
+  max-height: 250px;
+}
+.responsecontainer{
   background: #fff;
   /*width: 100%;*/
   width: 300px;
@@ -157,11 +164,11 @@ select[multiple], select[size] {
   -moz-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
   box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
 }
-#responsecontainer ul {
+.responsecontainer ul {
   margin: 10px;
   padding: 0;
 }
-#responsecontainer li {
+.responsecontainer li {
     list-style: none;
     margin: 5px;
 }
