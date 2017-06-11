@@ -2,9 +2,9 @@
 
 
 $(document).ready(function() {
-        if ($(this).val() == false) {
+  /**      if ($(this).val() == false) {
             $("responsecontainer").css("display", "none");
-        }
+        } **/
     $("#searchField").keyup(function() {                
 	//var searchString = $(this).val();
 	//$("#responsecontainer").html(searchString);

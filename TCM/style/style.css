@@ -2,9 +2,14 @@ body {
     font-family: 'Playfair Display', serif;
      /**font-size: 24pt;**/
 }
-body p, input, select {
+body p, input {
     display: inline-block;
     margin: 10px;
+}
+
+select {
+  display:block;
+  margin: 10px;
 }
 
 .eingabe, select {
@@ -133,12 +138,12 @@ select[multiple], select[size] {
 
 #search_form {
   position: relative;
-  width: 30%;
+/*  width: 30%; */
 }
 
 #searchField {
-  width: 100%;
-  max-width: 300px;
+  /**width: 100%;**/
+  width: 300px; 
   margin: 10px 0 !important;
 }
 #responsecontainer {
@@ -146,8 +151,8 @@ select[multiple], select[size] {
   position:absolute; 
   top:40px;
   background: #fff;
-  width: 100%;
-  max-width: 300px;
+  /*width: 100%;*/
+  width: 300px;
   -webkit-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
   -moz-box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
   box-shadow: 1px 7px 11px -3px rgba(140,138,140,0.5);
