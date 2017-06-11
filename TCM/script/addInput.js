@@ -19,7 +19,7 @@
               newdiv.className = "newInput";
 
               document.getElementById(divName).appendChild(newdiv);
-              counter++;
+          //    counter++;
         // }
 
     }

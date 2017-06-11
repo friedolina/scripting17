@@ -1,12 +1,9 @@
 <?php 
     include 'header.php';
 ?>
-    
-    
-    
-    
-    
-    
-<?php    
+                    <div id="responsecontainer"></div>
+
+
+<?php
     include 'footer.php';
 ?>

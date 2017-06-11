@@ -40,8 +40,8 @@
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/TCM/script/buttonUp.js"></script>
+        <script src="/TCM/script/ajax.js"></script>
         <script src="/TCM/script/addInput.js" language="Javascript" type="text/javascript"></script>
-        <script src="/TCM/script/eintragBearbeiten.js" language="Javascript" type="text/javascript"></script>
         <script src="/TCM/script/bootstrap.js" language="Javascript" type="text/javascript"></script>
         <!--script src="/TCM/script/bootstrap.min.js" language="Javascript" type="text/javascript"></script-->
         <script src="/TCM/script/npm.js" language="Javascript" type="text/javascript"></script>
@@ -253,12 +253,11 @@
             </li>
           </ul>
           <form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php">
-                <div class="form-group">
+                <!--div class="form-group"-->
                     <!--label for="input_search"></label-->
-                    <input type="text" class="form-control" name="search_form" maxlength="150" placeholder="Suche...">
-                    <!--span class="help-block"></span-->
+                    <input type="text" id="searchField" name="search_form" maxlength="150" placeholder="Suche...">
                     <button type="submit" class="btn btn-default" name="submit" >Suche</button>
-                </div>
+                <!--/div-->
             </form>
         </div>
       </div>
