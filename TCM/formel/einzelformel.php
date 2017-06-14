@@ -11,6 +11,16 @@
     
     $result_einzelformel = mysqli_query($db,$sql_einzelformel);
     $einzelformel = mysqli_fetch_array($result_einzelformel);
+    
+    $sql_bestandteil = "SELECT
+                        *
+                        FROM
+                        formelbestandteil
+                        WHERE
+                        for_id = '" . $_GET['formel'] . "';";
+    echo $sql_bestandteil;
+    $result_bestandteil = mysqli_query($db, $sql_bestandteil) or die(mysqli_error($db));
+    $bestandteil = mysqli_fetch_array($result_bestandteil);
 
     echo "<div id='headline'><h1>" . $einzelformel['name'] . "</h1></div>";
     if ( $einzelformel['anwendungsgebiet'] == true) {
@@ -31,9 +41,16 @@
         echo "<li>" . str_replace("#-#-#","</li><li>",$einzelformel["notiz"]) . "</li>";
         echo "</ul>";
     }
-   
-    echo "</ul>";
-    
-    
+    echo "<h4>Bestandteile</h4>";
+    foreach ($result_bestandteil as $bestandteil_kraut) {
+        $sql_formelkraut_name = "SELECT name FROM kraut WHERE kra_id='" . $bestandteil_kraut['kra_id'] . "';";
+        $result_formelkraut_name = mysqli_query($db,$sql_formelkraut_name) or die(mysqli_error($db));
+        $formelkraut_name = mysqli_fetch_array($result_formelkraut_name);
+
+        echo "<ul>";
+        echo "<li><strong>" . $formelkraut_name['name'] . ": </strong>" . $bestandteil_kraut['menge'] . ", " . $bestandteil_kraut['wichtigkeit'] . ", " . $bestandteil_kraut['funktion'] . "</li>";
+        echo "</ul>";
+    }
+
     include '../footer.php';
 ?>

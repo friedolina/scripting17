@@ -9,6 +9,20 @@ https://semesterproject-frieda.c9users.io/phpmyadmin
 
 https://semesterproject-frieda.c9users.io/
 
+formelbestandteil erstellen:
+create table formelbestandteil (
+    formelbestandteil_id integer not null auto_increment,
+    kra_id integer not null,
+    for_id integer not null,
+    menge varchar(200),
+    wichtigkeit ENUM('Kaiser', 'Minister', 'Botschafter', 'Assistent'),
+    funktion varchar(400),
+    primary key (formelbestandteil_id),
+    foreign key (kra_id) references kraut(kra_id),
+    foreign key (for_id) references formel(for_id)
+    ON DELETE CASCADE
+    ) engine=InnoDB;
+
 krautkategorieangehoerigkeit erstellen:
 create table kategorieangehoerigkeit (
     angehoerigkeit_id integer not null auto_increment,

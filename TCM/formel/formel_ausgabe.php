@@ -1,5 +1,7 @@
 <?php 
-    include '../header.php';
+    include '../connect.php';
+    
+    ob_start();
     
     $formel_name = $_POST["formel_name"];
     $formel_wirkungen = $_POST["formel_wirkungen"];
@@ -9,8 +11,12 @@
     $formel_notizen = $_POST["formel_notizen"];
     $formel_notizen_array = implode("#-#-#", $formel_notizen);
     $formel_klasse_id = $_POST["formel_klasse"];
-
-
+    $formelkraut_name = $_POST["formelkraut_name"];
+    $formelkraut_menge = $_POST["formelmenge_eingabe"];
+    $formelkraut_wichtigkeit = $_POST["wichtigkeit"];
+    $formelkraut_funktion = $_POST["funktion_eingabe"];
+        
+    //print_r($_POST);
     
     $sql = "INSERT INTO formel
             (
@@ -38,53 +44,38 @@
         mysqli_query($db, $sql_angehoerigkeit) or die(mysqli_error($db));
     }
 
+    $val = 0;    
+    foreach ($formelkraut_name as $formelkraut) {
+        $sql_formelkraut_kra_id = "SELECT kra_id FROM kraut WHERE name='" . $formelkraut . "';";
+        $result_formelkraut_kra_id = mysqli_query($db,$sql_formelkraut_kra_id) or die(mysqli_error($db));
+        $formelkraut_kra_id = mysqli_fetch_array($result_formelkraut_kra_id);
+
+        $sql_formelkraut = "INSERT INTO formelbestandteil
+                            (
+                            kra_id,
+                            for_id,
+                            menge,
+                            wichtigkeit,
+                            funktion
+                            )
+                            VALUES
+                            ('" . $formelkraut_kra_id['kra_id'] . "',
+                            '" . $for_id['for_id'] . "',
+                            '" . $formelkraut_menge[$val] . "',
+                            '$formelkraut_wichtigkeit[$val]',
+                            '$formelkraut_funktion[$val]'
+                            )";
+        $val ++;
+        $result_formelkraut = mysqli_query($db, $sql_formelkraut) or die(mysqli_error($db));
+    }
+
+    while (ob_get_status()) 
+        {
+            ob_end_clean();
+        }
+
+        header("Location: /TCM/formel/einzelformel.php?formel=" . $for_id['for_id'] );
+
+
 ?>
-    
-    <div id="headline"><h2><?php echo $formel_name ?></h2></div>
-    
-        <h4>Anwendungsgebiet</h4>
-    
-        <?php    
-            foreach ($formel_anwendungsgebiete as $eachAnwendungsgebiet) {
-                echo "<li>" . $eachAnwendungsgebiet . "</li>";
-            }
-        ?>
-        <h4>Wirkung</h4>
-        <?php
-            foreach ($formel_wirkungen as $eachWirkung) {
-                echo "<li>" . $eachWirkung . "</li>";
-            }
-        ?>
-        <h4>Notizen</h4>
-        <?php
-            foreach ($formel_notizen as $eachNotiz) {
-                echo "<li>" . $eachNotiz . "</li>";
-            }
-        ?>
-        <h4>Klasse</h4>    
-        
-        <?php
 
-            foreach ($formel_klasse_id as $kla_id) {
-                $sql_kla_name = "SELECT name FROM klasse WHERE kla_id = " . $kla_id . ";";
-                $result_kla_name = mysqli_query($db, $sql_kla_name) or die(mysqli_error($db));
-                $kla_name = mysqli_fetch_array($result_kla_name) or die(mysqli_error($db));
-                echo "<li>" . $kla_name['name'] . "</li>";
-            }
-
-            if ($result = true) {
-                echo "<p>Formel wurde gespeichert.</p>";
-            } else {
-                echo "<p>Die Speicherung ist nicht erfolgt.</p>";
-            }
-        ?>
-        <form>
-            <input Type="button" value="Zurück" onClick="history.go(-1);return true;">
-        </form>
-        <form action="https://semesterproject-frieda.c9users.io/TCM/formel/alle_formeln.php">
-            <input type="submit" value="Alle Formeln anzeigen" />
-        </form>
-
-<?php    
-    include '../footer.php';
-?>

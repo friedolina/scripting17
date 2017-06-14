@@ -28,7 +28,7 @@
             </div>
             <div id="kraut_auswahl">
                 <h4>Bestandteile</h4>
-                <input class="eingabe" type="text" id="formelkraut_eingabe" name="formelkraut_eingabe" maxlength="150" placeholder="Kraut...">
+                <input class="eingabe" type="text" id="formelkraut_eingabe" name="formelkraut_eingabe[]" maxlength="150" placeholder="Kraut...">
                 <div id="formel_response" class="scrollable-menu responsecontainer"></div>
                 <div id="formelkraeuter"></div>
             </div>
