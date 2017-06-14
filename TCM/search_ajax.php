@@ -10,9 +10,9 @@ $result_kraut_ajax = mysqli_query($db,$sql_kraut_ajax) or die(mysqli_error($db))
 $sql_formel_ajax = "SELECT 'FORMEL' AS source, name, for_id FROM formel WHERE name LIKE '%$searchString%' ORDER BY name ASC;";
 $result_formel_ajax = mysqli_query($db, $sql_formel_ajax) or die(mysqli_error($db));
 
-$output = "<ul>";
 
 if(strlen($searchString) >= 1) {
+    $output = "<ul>";
     $output_kraut = "<h4>Kräuter</h4>";
 	foreach($result_kraut_ajax as $kraut_data) {
         if ($kraut_data['source'] == "KRAUT") {
@@ -38,9 +38,9 @@ if(strlen($searchString) >= 1) {
         }
     }
 //    unset($data);
+    $output .= $output_kraut . $output_formel . "</ul>";
 }
 
-$output .= $output_kraut . $output_formel . "</ul>";
 echo $output;
 
 

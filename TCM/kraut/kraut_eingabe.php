@@ -27,7 +27,7 @@
     </div>
                 
     <h4>Kategorie:</h4>
-    <select name="kraut_kat[]" multiple>
+    <select name="kraut_kat[]" class="kat_auswahl" size="10" multiple>
         <?php
             foreach($result_kat as $kat) {
                 echo "<option value='" . $kat['kat_id'] . "'>" . $kat['name'] . "</option>";

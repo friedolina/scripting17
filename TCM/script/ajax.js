@@ -2,9 +2,6 @@
 
 
 $(document).ready(function() {
-  /**      if ($(this).val() == false) {
-            $("responsecontainer").css("display", "none");
-        } **/
     $("#searchField").keyup(function() {                
 	//var searchString = $(this).val();
 	//$("#responsecontainer").html(searchString);
@@ -13,7 +10,6 @@ $(document).ready(function() {
             url: "/TCM/search_ajax.php",             
             dataType: "html",   //expect html to be returned  
             data:{
-            	//"html",   //expect html to be returned                
             	searchString: $(this).val()
             },
             success: function(response){                    
@@ -24,21 +20,42 @@ $(document).ready(function() {
         });
     });
     
-    $("#formel_eingabe").keyup(function() {
+    $("#formelkraut_eingabe").keyup(function() {
         //alert($(this).val())
+
           $.ajax({    //create an ajax request to load_page.php
             type: "GET",
             url: "/TCM/formel/formel_ajax.php",             
             dataType: "html",   //expect html to be returned  
             data:{
-            	//"html",   //expect html to be returned                
             	formelkrautString: $(this).val()
             },
             success: function(response){   
-                console.log(response);
-                $("#formel_response").html(response); 
+                $("#formel_response").slideDown().html(response);; 
             }
         });
+    });
+    var counter = 0;
 
+    $('body').on('click', '.formelkraut_auswahl', function (){
+        var kraut_clicked = $(this).text();
+        counter ++;
+        $(this).closest("#formel_response").slideUp( "fast" , function() {
+            $("#formelkraeuter").append( "\
+                <div class='kraut_clicked' id='kraut_clicked" + counter + "'>\
+                    <p>" + kraut_clicked + ": </p>\
+                    <input class='menge' type='text' id='formelmenge_eingabe' name='formelmenge_eingabe" + counter + "' maxlength='150' placeholder='Menge...'>\
+                    <select name='wichtigkeit" + counter + "' class='wichtigkeit'>\
+                        <option>Kaiser</option>\
+                        <option>Minister</option>\
+                        <option>Botschafter</option>\
+                        <option>Assistent</option>\
+                    </select>\
+                    <input class='funktion_eingabe' type='text' id='funktion_eingabe" + counter + "' name='funktion_eingabe" + counter + "' maxlength='150' placeholder='Funktion...'>\
+                    <input class='plusbutton' type='button' value='-' onClick='this.parentElement.remove(); counter--;'>\
+            </div>");
+        });
+        //alert($(this).text());
+        //$( this ).parent("#formelkraut_eingabe").after( "<input class='eingabe' type='text' id='formelmenge_eingabe' name='formelmenge_eingabe' maxlength='150' placeholder='Menge...'>" );
     });
 });

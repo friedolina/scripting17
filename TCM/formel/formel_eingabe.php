@@ -2,7 +2,7 @@
     include '../header.php';
 ?>
     
-    <div id="headline"><h2>Formel-Eingabe</h2></div>
+    <div id="headline"><h2>Neue Formel</h2></div>
     
         <form action="formel_ausgabe.php" method="post">
             <h4>Name: </h4>
@@ -28,12 +28,13 @@
             </div>
             <div id="kraut_auswahl">
                 <h4>Bestandteile</h4>
-                <input class="eingabe" type="text" id="formel_eingabe" name="formel_eingabe" maxlength="150" placeholder="Kraut...">
+                <input class="eingabe" type="text" id="formelkraut_eingabe" name="formelkraut_eingabe" maxlength="150" placeholder="Kraut...">
                 <div id="formel_response" class="scrollable-menu responsecontainer"></div>
+                <div id="formelkraeuter"></div>
             </div>
             
             <h4>Klasse:</h4>
-            <select name="formel_klasse[]" multiple>
+            <select name="formel_klasse[]" class="kat_auswahl" size="10" multiple>
                 <?php
                     foreach($result_klasse as $kla) {
                         echo "<option value='" . $kla['kla_id'] . "'>" . $kla['name'] . "</option>";
