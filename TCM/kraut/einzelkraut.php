@@ -21,7 +21,32 @@
     $result_bestandteilformel_id = mysqli_query($db, $sql_bestandteilformel_id) or die(mysqli_error($db));
     $bestandteil_formel_id = mysqli_fetch_array($result_bestandteilformel_id);
     
+    $sql_krautkategorie_id = "SELECT
+                    kat_id
+                    FROM
+                    kategorieangehoerigkeit
+                    WHERE
+                    kra_id = '$kra_id';";
+    $result_krautkategorie_id = mysqli_query($db, $sql_krautkategorie_id) or die(mysqli_error($db));
+    $krautkategorie_id = mysqli_fetch_array($result_krautkategorie_id);
+    
     echo "<div id='headline'><h1>" . $einzelkraut['name'] . "</h1></div>";
+    if ($krautkategorie_id == true) {
+        echo "<h4>Krautkategorie</h4>";
+        echo "<ul>";
+        foreach($result_krautkategorie_id as $kategorie) {
+            $sql_krautkategorie_name = "SELECT
+                    name
+                    FROM
+                    kategorie
+                    WHERE
+                    kat_id = '" . $kategorie['kat_id'] . "';";
+            $result_krautkategorie_name = mysqli_query($db, $sql_krautkategorie_name) or die(mysqli_error($db));
+            $krautkategorie_name = mysqli_fetch_array($result_krautkategorie_name);
+            echo "<li><a href='/TCM/kraut/kategorie.php?kategorie=" . $kategorie['kat_id'] . "'>" . $krautkategorie_name['name'] . "</a></li>";
+        }
+        echo "</ul>";
+    }
     if ( $einzelkraut['alternativname'] == true) {
         echo "<h4>Weitere Bezeichnungen</h4>";
         echo "<ul>";
