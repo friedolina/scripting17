@@ -1,12 +1,21 @@
 body {
     font-family: 'Playfair Display', serif;
      /**font-size: 24pt;**/
+    line-height: 2em;
+    padding-bottom: 40px;
+    color: #666;
+}
+.panel,
+.responsecontainer {
+  line-height: 1.5em;
 }
 body p, input {
     display: inline-block;
     margin: 10px;
 }
-
+#content_container a {
+  font-weight: bold;
+}
 .kat_auswahl {
   display:block;
   margin: 10px;
@@ -51,10 +60,6 @@ body p, input {
  */
 
 /* layout */
-body {
-  padding-bottom: 40px;
-  color: #666;
-}
 pre { margin: 0; padding: 10px 20px !important;}
 
 footer {

@@ -1,6 +1,8 @@
 <?php 
-    include '../header.php';
-    
+    include '../connect.php';
+
+    ob_start();
+
     $kraut_name = $_POST["kraut_name"];
     $kraut_alternativname = $_POST["kraut_alternativname"];
     $kraut_alternativname_array = implode("#-#-#", $kraut_alternativname);
@@ -41,57 +43,11 @@
         mysqli_query($db, $sql_angehoerigkeit) or die(mysqli_error($db));
     }
 
-?>
-    
-    <div id="headline"><h1><?php echo $kraut_name ?></h1></div>
-    
-    <?php
-    
-    if ($kraut_alternativname == true) {
-        echo "<h4>Weitere Bezeichnungen:</h4>";
-        foreach ($kraut_alternativname as $eachAlternativname) {
-            echo "<li>" . $eachAlternativname . "</li>"   ;
+    while (ob_get_status()) 
+        {
+            ob_end_clean();
         }
-    }
-    ?>
-    
 
-        <h4>Merkmal und Wirkung</h4>
-    
-        <?php    
+        header("Location: /TCM/kraut/einzelkraut.php?kraut=" . $kra_id['kra_id'] );
 
-            foreach ($kraut_wirkungen as $eachWirkung) {
-                echo "<li>" . $eachWirkung . "</li>";
-            }
-            foreach ($kraut_merkmale as $eachMerkmal) {
-                echo "<li>" . $eachMerkmal . "</li>";
-            }
-        ?>
-        
-        <h4>Kategorie</h4>    
-        
-        <?php
-
-            foreach ($kraut_kat_id as $kat_id) {
-                $sql_kat_name = "SELECT name FROM kategorie WHERE kat_id = " . $kat_id . ";";
-                $result_kat_name = mysqli_query($db, $sql_kat_name);
-                $kat_name = mysqli_fetch_array($result_kat_name);
-                echo "<li>" . $kat_name['name'] . "</li>";
-            }
-
-            if ($result = true) {
-                echo "<p>Kraut wurde gespeichert.</p>";
-            } else {
-                echo "<p>Die Speicherung ist nicht erfolgt.</p>";
-            }
-        ?>
-        <form>
-            <input Type="button" value="Zurück" onClick="history.go(-1);return true;">
-        </form>
-        <form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
-            <input type="submit" value="Alle Kräuter anzeigen" />
-        </form>
-    
-<?php    
-    include '../footer.php';
 ?>

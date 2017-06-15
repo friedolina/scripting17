@@ -8,7 +8,7 @@
     <h4>Name: </h4><input class="eingabe" type="text" name="kategorie_name"/>
                
     <h4>Kräuter:</h4>
-    <select name="kat_kraut[]" class="kat_auswahl" multiple>
+    <select name="kat_kraut[]" class="kat_auswahl" size=10 multiple>
         <?php
             foreach($result_kraut as $kraut) {
                 echo "<option value='" . $kraut['kra_id'] . "'>" . $kraut['name'] . "</option>";
