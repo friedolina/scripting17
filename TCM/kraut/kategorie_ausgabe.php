@@ -1,8 +1,9 @@
 <?php 
     include '../header.php';
+    include '../filterinput.php';
 
 
-$kategorie_name = $_POST['kategorie_name'];
+$kategorie_name = test_input($_POST['kategorie_name']);
 //echo "Kategorie-Name: " . $kategorie_name . "<br>";
 $kat_kraut_id = $_POST['kat_kraut'];
 $kat_kraut_string = implode(",",$kat_kraut_id);

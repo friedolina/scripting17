@@ -2,7 +2,7 @@
 
         <?php
             include 'connect.php';
-            
+
             $sql_kraut = "SELECT
             name, kra_id
             FROM

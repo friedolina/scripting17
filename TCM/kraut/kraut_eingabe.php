@@ -40,9 +40,9 @@
     <input type="reset" value="Zurücksetzen"/>
             
 </form>
-<form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
+<!--form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
     <input type="submit" value="Alle Kräuter anzeigen" />
-</form>
+</form-->
 
 <?php    
     include '../footer.php';

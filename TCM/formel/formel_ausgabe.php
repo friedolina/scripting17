@@ -1,20 +1,20 @@
 <?php 
     include '../connect.php';
-    
+    include '../filterinput.php';
     ob_start();
     
-    $formel_name = $_POST["formel_name"];
+    $formel_name = test_input($_POST["formel_name"]);
     $formel_wirkungen = $_POST["formel_wirkungen"];
-    $formel_wirkungen_array = implode("#-#-#", $formel_wirkungen);
+    $formel_wirkungen_array = test_input(implode("#-#-#", $formel_wirkungen));
     $formel_anwendungsgebiete = $_POST["formel_anwendungsgebiete"];
-    $formel_anwendungsgebiete_array = implode("#-#-#", $formel_anwendungsgebiete);
+    $formel_anwendungsgebiete_array = test_input(implode("#-#-#", $formel_anwendungsgebiete));
     $formel_notizen = $_POST["formel_notizen"];
-    $formel_notizen_array = implode("#-#-#", $formel_notizen);
+    $formel_notizen_array = test_input(implode("#-#-#", $formel_notizen));
     $formel_klasse_id = $_POST["formel_klasse"];
     $formelkraut_name = $_POST["formelkraut_name"];
-    $formelkraut_menge = $_POST["formelmenge_eingabe"];
-    $formelkraut_wichtigkeit = $_POST["wichtigkeit"];
-    $formelkraut_funktion = $_POST["funktion_eingabe"];
+    $formelkraut_menge = test_input($_POST["formelmenge_eingabe"]);
+    $formelkraut_wichtigkeit = test_input($_POST["wichtigkeit"]);
+    $formelkraut_funktion = test_input($_POST["funktion_eingabe"]);
         
     //print_r($_POST);
     

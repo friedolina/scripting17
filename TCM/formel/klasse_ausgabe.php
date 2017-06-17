@@ -1,8 +1,9 @@
 <?php 
     include '../header.php';
+    include '../filterinput.php';
 
 
-$klasse_name = $_POST['klasse_name'];
+$klasse_name = test_input($_POST['klasse_name']);
 $klasse_formel_id = $_POST['klasse_formel'];
 $klasse_formel_string = implode(",",$klasse_formel_id);
 
