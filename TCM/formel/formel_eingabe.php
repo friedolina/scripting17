@@ -1,34 +1,49 @@
 <?php 
     include '../header.php';
+    
+    if ($_SESSION['benutzername'] == FALSE) {
+        echo "<p>Du kannst dich <a href='/TCM/index.php'>hier</a> einloggen.</p>";    
+        exit;
+    }
 ?>
     
     <div id="headline"><h2>Neue Formel</h2></div>
     
         <form action="formel_ausgabe.php" method="post">
             <h4>Name: </h4>
-            <input class="eingabe" type="text" name="formel_name"/>
+            <div class="flexcontainer">
+                <input class="eingabe" type="text" name="formel_name"/>
+            </div>
            
             <div id="dynamicAnwendungsgebiet">
                 <h4>Anwendungsgebiet: </h4>
-                <input class="eingabe" type="text" name="formel_anwendungsgebiete[]">
-                <input class="plusbutton" type="button" value="+" onClick="addInput('Anwendungsgebiet', 'dynamicAnwendungsgebiet', 'formel_anwendungsgebiete[]');">
-
+                <div class="flexcontainer">
+                    <input class="eingabe" type="text" name="formel_anwendungsgebiete[]">
+                    <input class="plusbutton" type="button" value="+" onClick="addInput('Anwendungsgebiet', 'dynamicAnwendungsgebiet', 'formel_anwendungsgebiete[]');">
+                </div>
             </div>
 
             <div id="dynamicWirkung">
                 <h4>Wirkung: </h4>
-                <input class="eingabe" type="text" name="formel_wirkungen[]">
-               <input class="plusbutton" type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'formel_wirkungen[]');">
+                <div class="flexcontainer">
+                    <input class="eingabe" type="text" name="formel_wirkungen[]">
+                    <input class="plusbutton" type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'formel_wirkungen[]');">
+                </div>
             </div>
            
             <div id="dynamicNotiz">
                 <h4>Notiz: </h4>
-                <input class="eingabe" type="text" name="formel_notizen[]">
-                <input class="plusbutton" type="button" value="+" onClick="addInput('Notiz', 'dynamicNotiz', 'formel_notizen[]');">
+                <div class="flexcontainer">
+                    <input class="eingabe" type="text" name="formel_notizen[]">
+                    <input class="plusbutton" type="button" value="+" onClick="addInput('Notiz', 'dynamicNotiz', 'formel_notizen[]');">
+                </div>
             </div>
+            
             <div id="kraut_auswahl">
                 <h4>Bestandteile</h4>
-                <input class="eingabe" type="text" id="formelkraut_eingabe" name="formelkraut_eingabe[]" maxlength="150" placeholder="Kraut...">
+                <div class="flexcontainer">
+                    <input class="eingabe" type="text" id="formelkraut_eingabe" name="formelkraut_eingabe[]" maxlength="150" placeholder="Kraut...">
+                </div>
                 <div id="formel_response" class="scrollable-menu responsecontainer"></div>
                 <div id="formelkraeuter"></div>
             </div>

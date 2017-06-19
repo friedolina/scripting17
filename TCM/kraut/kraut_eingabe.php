@@ -1,29 +1,41 @@
 <?php 
     include '../header.php';
+    if ($_SESSION['benutzername'] == FALSE) {
+        echo "<p>Du kannst dich <a href='/TCM/index.php'>hier</a> einloggen.</p>";    
+        exit;
+    }
 ?>
     
 <div id="headline"><h1>Neues Kraut</h1></div>
     
 <form action="kraut_ausgabe.php" method="post">
     <h4>Name: </h4>
-    <input class="eingabe" type="text" name="kraut_name"/>
+    <div class="flexcontainer">
+        <input class="eingabe" type="text" name="kraut_name"/>
+    </div>
     
     <div id="dynamicAlternativname">
         <h4>Weitere Bezeichnung: </h4>
-        <input class="eingabe" type="text" name="kraut_alternativname[]">
-        <input class="plusbutton" type="button" value="+" onClick="addInput('Weitere Bezeichnung', 'dynamicAlternativname', 'kraut_alternativname[]');">
+        <div class="flexcontainer">
+            <input class="eingabe" type="text" name="kraut_alternativname[]">
+            <input class="plusbutton" type="button" value="+" onClick="addInput('Weitere Bezeichnung', 'dynamicAlternativname', 'kraut_alternativname[]');">
+        </div>
     </div>
                
     <div id="dynamicWirkung">
         <h4>Wirkung: </h4>
-        <input class="eingabe" type="text" name="kraut_wirkungen[]">
-        <input class="plusbutton" type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'kraut_wirkungen[]');">
+        <div class="flexcontainer">
+            <input class="eingabe" type="text" name="kraut_wirkungen[]">
+            <input class="plusbutton" type="button" value="+" onClick="addInput('Wirkung', 'dynamicWirkung', 'kraut_wirkungen[]');">
+        </div>
     </div>
     
     <div id="dynamicMerkmal">
         <h4>Merkmal: </h4>
-        <input class="eingabe" type="text" name="kraut_merkmale[]"/>
-        <input class="plusbutton" type="button" value="+" onClick="addInput('Merkmal', 'dynamicMerkmal', 'kraut_merkmale[]');">
+        <div class="flexcontainer">
+            <input class="eingabe" type="text" name="kraut_merkmale[]"/>
+            <input class="plusbutton" type="button" value="+" onClick="addInput('Merkmal', 'dynamicMerkmal', 'kraut_merkmale[]');">
+        </div>
     </div>
                 
     <h4>Kategorie:</h4>

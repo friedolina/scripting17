@@ -2,6 +2,8 @@
 
         <?php
             include 'connect.php';
+            
+            session_start();
 
             $sql_kraut = "SELECT
             name, kra_id
@@ -43,6 +45,7 @@
         <script src="/TCM/script/ajax.js"></script>
         <script src="/TCM/script/addInput.js" language="Javascript" type="text/javascript"></script>
         <script src="/TCM/script/bootstrap.js" language="Javascript" type="text/javascript"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <!--script src="/TCM/script/bootstrap.min.js" language="Javascript" type="text/javascript"></script-->
         <script src="/TCM/script/npm.js" language="Javascript" type="text/javascript"></script>
         <title>TCM-Kräuterlexikon</title>
@@ -106,7 +109,6 @@
                             </div>
                           </div>
                         </div>  
-                        
                         <!-- KRÄUTER KATEGORIEN -->
                         <div class="panel panel-default">
                           <div class="panel-heading">
@@ -225,15 +227,20 @@
               </ul>
             </li>
             <!-- Classic dropdown -->
-            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Hinzufügen<b class="caret"></b></a>
-              <ul role="menu" class="dropdown-menu">
-                <li><a href="/TCM/kraut/kraut_eingabe.php">Kraut</a></li>
-                <li><a href="/TCM/kraut/kategorie_eingabe.php">Krautkategorie</a></li>
-                <li><a href="/TCM/formel/formel_eingabe.php">Formel</a></li>
-                <!--li class="divider"></li-->
-                <li><a href="/TCM/formel/klasse_eingabe.php">Formelklasse</a></li>
-              </ul>
-            </li>
+            <?php
+            if ($_SESSION['benutzername'] == true) {
+            echo '<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Hinzufügen<b class="caret"></b></a>';
+            echo '<ul role="menu" class="dropdown-menu">';
+            echo '<li><a href="/TCM/kraut/kraut_eingabe.php">Kraut</a></li>';
+            echo '<li><a href="/TCM/kraut/kategorie_eingabe.php">Krautkategorie</a></li>';
+            echo '<li><a href="/TCM/formel/formel_eingabe.php">Formel</a></li>';
+            //<!--li class="divider"></li-->
+            echo '<li><a href="/TCM/formel/klasse_eingabe.php">Formelklasse</a></li>';
+            echo '</ul>';
+            echo '</li>';
+            }
+            
+            ?>
           </ul>
 
           <!--form class="navbar-form navbar-left" method="POST" action="/TCM/search_output.php"-->
@@ -251,5 +258,3 @@
     </div>
         
         <div id="content_container">
-            
-            <!--div id="header"><h1>TCM-Kräuterlexikon</h1></div-->

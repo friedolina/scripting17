@@ -16,7 +16,7 @@
               var newdiv = document.createElement('div');
 
               newdiv.innerHTML = "<input class='eingabe' type='text' name='" + arrayName + "'><input class='plusbutton' type='button' value='-' onClick='this.parentElement.remove(); counter--;'>";
-              newdiv.className = "newInput";
+              newdiv.className = "flexcontainer";
 
               document.getElementById(divName).appendChild(newdiv);
           //    counter++;

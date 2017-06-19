@@ -1,6 +1,10 @@
 <?php 
     include '../header.php';
     include '../filterinput.php';
+    if ($_SESSION['benutzername'] == FALSE) {
+        echo "<p>Du kannst dich <a href='/TCM/index.php'>hier</a> einloggen.</p>";    
+        exit;
+    }
 
 
 $klasse_name = test_input($_POST['klasse_name']);

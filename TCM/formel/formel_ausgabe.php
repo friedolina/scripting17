@@ -1,6 +1,11 @@
 <?php 
+    session_start();
     include '../connect.php';
     include '../filterinput.php';
+    if ($_SESSION['benutzername'] == FALSE) {
+        echo "<p>Du kannst dich <a href='/TCM/index.php'>hier</a> einloggen.</p>";    
+        exit;
+    }
     ob_start();
     
     $formel_name = test_input($_POST["formel_name"]);

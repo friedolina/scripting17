@@ -1,5 +1,9 @@
 <?php 
     include '../header.php';
+    if ($_SESSION['benutzername'] == FALSE) {
+        echo "<p>Du kannst dich <a href='/TCM/index.php'>hier</a> einloggen.</p>";    
+        exit;
+    }
 ?>
     
 <div id="headline"><h1>Neue Kategorie</h1></div>
