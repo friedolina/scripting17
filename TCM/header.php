@@ -230,17 +230,35 @@
             <!-- Classic dropdown -->
             <?php
             if ($_SESSION['benutzername'] == true) {
-            echo '<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Hinzufügen<b class="caret"></b></a>';
-            echo '<ul role="menu" class="dropdown-menu">';
-            echo '<li><a href="/TCM/kraut/kraut_eingabe.php">Kraut</a></li>';
-            echo '<li><a href="/TCM/kraut/kategorie_eingabe.php">Krautkategorie</a></li>';
-            echo '<li><a href="/TCM/formel/formel_eingabe.php">Formel</a></li>';
-            //<!--li class="divider"></li-->
-            echo '<li><a href="/TCM/formel/klasse_eingabe.php">Formelklasse</a></li>';
-            echo '</ul>';
-            echo '</li>';
+            echo '
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle">Hinzufügen<b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a href="/TCM/kraut/kraut_eingabe.php">Kraut</a>
+                    </h4>
+                  </div>
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a href="/TCM/kraut/kategorie_eingabe.php">Krautkategorie</a>
+                    </h4>
+                  </div>
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a href="/TCM/formel/formel_eingabe.php">Formel</a>
+                    </h4>
+                  </div>
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a href="/TCM/formel/klasse_eingabe.php">Formelklasse</a>
+                    </h4>
+                  </div>
+                </ul>
+            </li>';
             }
-            
+                        //<!--li class="divider"></li-->
+
             ?>
           </ul>
 
