@@ -44,6 +44,7 @@ if ($passwort_bestätigung == $passwort) {
     echo "<p><a href='registration.php'>Zurück zur Registrierung...</a></p>";
 }
     
-
-include("footer.php");
 ?>
+        </div>
+    </body>
+</html>

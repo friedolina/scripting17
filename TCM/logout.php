@@ -3,8 +3,11 @@ include 'header.php';
 
 session_destroy();
 
-echo "Du hast dich ausgeloggt.";
+echo "<h3>Du hast dich ausgeloggt.</h3>";
 
 
-include 'footer.php';
 ?>
+
+        </div>
+    </body>
+</html>

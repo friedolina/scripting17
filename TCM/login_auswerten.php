@@ -27,7 +27,7 @@ if (password_verify('$passwort', $login['passwort'])) {
     $_SESSION["benutzername"] = $benutzername;
     
     echo "
-            <p>Hallo $benutzername, Du bist eingeloggt!</p>
+            <h3>Hallo $benutzername! Du bist eingeloggt!</h3>
         ";
     
 }
@@ -37,7 +37,6 @@ else {
 }
 ?>
 
-
-<?php
-include("footer.php");
-?>
+        </div>
+    </body>
+</html>

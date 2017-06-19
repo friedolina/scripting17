@@ -10,6 +10,7 @@
             FROM
             kraut ORDER BY name ASC";
             
+            
             $result_kraut = mysqli_query($db, $sql_kraut);
             
             $sql_kat = "SELECT

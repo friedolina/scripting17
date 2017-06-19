@@ -1,4 +1,3 @@
-     <div id="push"></div>
      </div>
     
       <div id="nutzer">

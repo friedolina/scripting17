@@ -2,10 +2,9 @@
 
 include 'header.php';
 
-?>
-
-<!-- REGISTRATION FORM -->
-<div class="text-center" style="padding:50px 0">
+if ($_SESSION['benutzername'] == FALSE) {
+echo
+'<div class="text-center" style="padding:50px 0">
     <div id="headline"><h1>Registrierung</h1></div>
 	<!-- Main Form -->
 	<div class="login-form-1">
@@ -30,15 +29,15 @@ include 'header.php';
 				<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 			</div>
 			<div class="etc-login-form">
-				<p>Hast du schon einen Account? </br><a href="/TCM/index.php">Hier geht's zum Login</a></p>
+				<p>Hast du schon einen Account? </br><a href="/TCM/index.php">Hier geht\'s zum Login</a></p>
 			</div>
 		</form>
 	</div>
 	<!-- end:Main Form -->
-</div>
-
-<?php
-
+</div>';
+} else {
+	echo "<h3>Du bist bereits eingeloggt.</h3>";
+}
 include 'footer.php';
 
 ?>
