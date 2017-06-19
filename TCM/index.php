@@ -36,7 +36,7 @@
 		} else {
 			echo "<h3>Herzlich willkommen " . $_SESSION['benutzername'] . "!</h3>";
 		}
+
+    include 'footer.php';
 ?>
-        </div>
-    </body>
-</html>
+?>

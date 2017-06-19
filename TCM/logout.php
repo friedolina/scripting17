@@ -1,13 +1,21 @@
 <?php
-include 'header.php';
+    session_start();
+    include 'connect.php';
+    include 'filterinput.php';
+    ob_start();
+    if ($_SESSION['benutzername'] == FALSE) {
+        echo "<p>Du kannst dich <a href='/TCM/index.php'>hier</a> einloggen.</p>";    
+        exit;
+    }
 
 session_destroy();
 
-echo "<h3>Du hast dich ausgeloggt.</h3>";
 
+ while (ob_get_status()) 
+        {
+            ob_end_clean();
+        }
+
+        header("Location: /TCM/index.php");
 
 ?>
-
-        </div>
-    </body>
-</html>
