@@ -9,12 +9,10 @@
 
     ob_start();
 
-    
+    $kraut_id = $_POST['kraut_id'];
     $kraut_name = test_input($_POST["kraut_name"]);
     $kraut_alternativname = $_POST["kraut_alternativname"];
     $kraut_alternativname_array = test_input(implode("#-#-#", $kraut_alternativname));
-    //$kraut_wirkung = $_POST["kraut_wirkung"];
-    //$kraut_merkmal = $_POST["kraut_merkmal"];
     $kraut_wirkungen = $_POST["kraut_wirkungen"];
     $kraut_wirkungen_array = test_input(implode("#-#-#", $kraut_wirkungen));
     $kraut_merkmale = $_POST["kraut_merkmale"];
@@ -22,31 +20,19 @@
     
     $kraut_kat_id = $_POST["kraut_kat"];
 
-    
-    $sql = "INSERT INTO kraut
-            (
-                name,
-                alternativname,
-                wirkung,
-                merkmal
-            )
-            VALUES
-            (
-                '$kraut_name',
-                '$kraut_alternativname_array',
-                '$kraut_wirkungen_array',
-                '$kraut_merkmale_array'
-            )";
+    $sql = "UPDATE kraut
+            SET
+                name = '$kraut_name',
+                alternativname = '$kraut_alternativname_array',
+                wirkung = '$kraut_wirkungen_array',
+                merkmal = '$kraut_merkmale_array'
+            WHERE
+                kra_id = '$kraut_id';";
                 
     $result = mysqli_query($db, $sql);
    // $anzahl = mysqli_num_rows($result);
    
-    $sql_kra_id = "SELECT kra_id FROM kraut WHERE name = '" . $kraut_name . "';";
-    //echo $sql_kat_id . "<br>";    
-    $result_kra_id = mysqli_query($db, $sql_kra_id);
-    $kra_id = mysqli_fetch_array($result_kra_id);
-    
-    foreach ($kraut_kat_id as $kat_id) {
+/*    foreach ($kraut_kat_id as $kat_id) {
         $sql_angehoerigkeit = "
                 INSERT INTO 
                     kategorieangehoerigkeit 
@@ -59,6 +45,7 @@
                     );";
         mysqli_query($db, $sql_angehoerigkeit) or die(mysqli_error($db));
     }
+    */
 
 
     while (ob_get_status()) 
@@ -66,6 +53,6 @@
             ob_end_clean();
         }
 
-        header("Location: /TCM/kraut/einzelkraut.php?kraut=" . $kra_id['kra_id'] );
+        header("Location: /TCM/kraut/einzelkraut.php?kraut=" . $kraut_id );
 
 ?>

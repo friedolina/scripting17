@@ -1,19 +1,19 @@
 <?php
 include("header.php");
+include("filterinput.php");
 
 // Neuen Nutzer speichern
 
-$benutzername = $_POST["reg_username"];
-$passwort = $_POST["reg_password"];
-$passwort_bestätigung = $_POST["reg_password_confirm"];
+$benutzername = test_input($_POST["reg_username"]);
+$passwort = test_input($_POST["reg_password"]);
+$passwort_bestätigung = test_input($_POST["reg_password_confirm"]);
 
 
 if ($passwort_bestätigung == $passwort) {
     $sql_benutzerdopplung = "SELECT * FROM benutzer WHERE benutzername = '$benutzername';";
     $result_benutzerdopplung = mysqli_query($db, $sql_benutzerdopplung) or die(mysqli_error($db));
     $benutzerdopplung = mysqli_fetch_array($result_benutzerdopplung);
-    //echo $result_benutzerdopplung;
-    
+
     if ($benutzerdopplung == true) {
         echo "<p>Der Benutzername existiert bereits. Versuch es noch einmal!</p></br>";
         echo "<p><a href='registration.php'>Zurück zur Registrierung...</a></p>";
@@ -28,7 +28,7 @@ if ($passwort_bestätigung == $passwort) {
             VALUES
                 ( 
                     '$benutzername',
-                    '" . password_hash('$passwort', PASSWORD_DEFAULT) . "'
+                    '" . password_hash($passwort, PASSWORD_DEFAULT) . "'
                 )";
     
     $result_registration = mysqli_query($db, $sql_registration) or die(mysqli_error($db));

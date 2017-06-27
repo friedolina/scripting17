@@ -1,25 +1,20 @@
-      //  var counter = 1;
+/*
+function addInput(divName, arrayName){
+    var newdiv = document.createElement('div');
 
-    //    var limit = 5;  
+    newdiv.innerHTML = "<input class='eingabe' type='text' name='" + arrayName + "'><input type='button' value='-' class='minusbutton'>";
+    newdiv.className = "flexcontainer";
 
-    function addInput(inputName, divName, arrayName){
+    document.getElementById(divName).appendChild(newdiv);
+}
+$(document).on("click", "plusbutton", 
+*/
 
+function addInput(divName, arrayName) {
+    console.log("<div class='flexcontainer'><input class='eingabe' type='text' name='" + arrayName + "'><input type='button' value='-' class='minusbutton'></div>");
+    $('#' + divName).append("<div class='flexcontainer'><input class='eingabe' type='text' name='" + arrayName + "'><input type='button' value='-' class='minusbutton'></div>");
+};
 
-      //   if (counter == limit)  {
-
-    //          alert("Du hast das Limit von " + counter + " Eingaben erreicht");
-
-      //   }
-
-        // else { 
-
-              var newdiv = document.createElement('div');
-
-              newdiv.innerHTML = "<input class='eingabe' type='text' name='" + arrayName + "'><input class='plusbutton' type='button' value='-' onClick='this.parentElement.remove(); counter--;'>";
-              newdiv.className = "flexcontainer";
-
-              document.getElementById(divName).appendChild(newdiv);
-          //    counter++;
-        // }
-
-    }
+$(document).on("click", ".minusbutton", function(){
+    $(this).parent().remove();
+});

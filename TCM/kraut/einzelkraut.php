@@ -83,6 +83,11 @@
     
     echo "</ul>";
     
+    echo '<form action="https://semesterproject-frieda.c9users.io/TCM/kraut/kraut_eingabe.php" method="post">
+            <input type="submit" value="Kraut bearbeiten"/>
+            <input type="hidden" value=' . $kra_id . ' name="kraut_id"/>
+        </form>';
+    
     
     include '../footer.php';
 ?>

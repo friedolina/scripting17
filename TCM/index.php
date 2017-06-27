@@ -1,6 +1,8 @@
 <?php 
     include 'header.php';
     if ($_SESSION['benutzername'] == FALSE) {
+    	$error = $_POST['login_fail'];
+    	echo $error;
 		echo '
 			<div class="text-center" style="padding:50px 0">
 			    <div id="headline"><h1>Login</h1></div>
