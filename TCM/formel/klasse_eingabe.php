@@ -12,7 +12,7 @@
     <h4>Name: </h4><input class="eingabe" type="text" name="klasse_name"/>
                
     <h4>Formeln:</h4>
-    <select name="klasse_formel[]" multiple>
+    <select name="klasse_formel[]" multiple class="kat_auswahl" size=10>
         <?php
             foreach($result_formel as $formel) {
                 echo "<option value='" . $formel['for_id'] . "'>" . $formel['name'] . "</option>";

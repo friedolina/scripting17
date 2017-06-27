@@ -1,6 +1,5 @@
 
 <?php
-
 include 'connect.php';
                     
 $searchString = $_GET['searchString'];

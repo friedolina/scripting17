@@ -81,7 +81,7 @@
                         <!-- KRÄUTER ALPHABETISCH --> 
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Alle Kräuter alphabetisch</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Alle Kräuter alphabetisch <b class="caret"></b></a></h4>
                           </div>
                           <div id="collapseOne" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -113,7 +113,7 @@
                         <!-- KRÄUTER KATEGORIEN -->
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Alle Kräuter nach Kategorien</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Alle Kräuter nach Kategorien <b class="caret"></b></a></h4>
                           </div>
                           <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -153,7 +153,7 @@
                         <!-- FORMELN ALPHABETISCH -->
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Alle Formeln alphabetisch</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Alle Formeln alphabetisch <b class="caret"></b></a></h4>
                           </div>
                           <div id="collapseThree" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -185,7 +185,7 @@
                         <!-- FORMELN KLASSEN -->
                         <div class="panel panel-default">
                           <div class="panel-heading">
-                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Alle Formeln nach Klassen</a></h4>
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Alle Formeln nach Klassen <b class="caret"></b></a></h4>
                           </div>
                           <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">

@@ -34,7 +34,7 @@
 			</div>
 			';
 		} else {
-			echo "<h3>Herzlich willkommen " . $_SESSION['benutzername'] . "!</h3>";
+			echo "<div id='headline'><h1>Herzlich willkommen " . $_SESSION['benutzername'] . "!</h1></div>";
 		}
 
     include 'footer.php';

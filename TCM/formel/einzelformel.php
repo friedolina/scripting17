@@ -22,7 +22,7 @@
     $bestandteil = mysqli_fetch_array($result_bestandteil);
     
     $sql_klasse_id = "SELECT
-                    *
+                    kla_id
                     FROM
                     klassenangehoerigkeit
                     WHERE

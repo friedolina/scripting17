@@ -3,8 +3,6 @@
 
 $(document).ready(function() {
     $("#searchField").keyup(function() {                
-	//var searchString = $(this).val();
-	//$("#responsecontainer").html(searchString);
           $.ajax({    //create an ajax request to load_page.php
             type: "GET",
             url: "/TCM/search_ajax.php",             
@@ -14,7 +12,6 @@ $(document).ready(function() {
             },
             success: function(response){                    
                 $("#responsecontainer").html(response); 
-                //alert(response);
             }
     
         });
@@ -41,7 +38,7 @@ $(document).ready(function() {
         var kraut_clicked = $(this).text();
         counter ++;
         $(this).closest("#formel_response").slideUp( "fast" , function() {
-                                        $.ajax({
+                    $.ajax({
                         type: "GET",
                         url: "/TCM/formel/formel_ajax2.php",
                         dataType: "html",
