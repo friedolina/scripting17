@@ -12,13 +12,13 @@
     
     $kraut_name = test_input($_POST["kraut_name"]);
     $kraut_alternativname = $_POST["kraut_alternativname"];
-    $kraut_alternativname_array = test_input(implode("#-#-#", $kraut_alternativname));
+    $kraut_alternativname_array = test_input(implode("#-#-#", array_filter($kraut_alternativname)));
     //$kraut_wirkung = $_POST["kraut_wirkung"];
     //$kraut_merkmal = $_POST["kraut_merkmal"];
     $kraut_wirkungen = $_POST["kraut_wirkungen"];
-    $kraut_wirkungen_array = test_input(implode("#-#-#", $kraut_wirkungen));
+    $kraut_wirkungen_array = test_input(implode("#-#-#", array_filter($kraut_wirkungen)));
     $kraut_merkmale = $_POST["kraut_merkmale"];
-    $kraut_merkmale_array = test_input(implode("#-#-#", $kraut_merkmale));
+    $kraut_merkmale_array = test_input(implode("#-#-#", array_filter($kraut_merkmale)));
     
     $kraut_kat_id = $_POST["kraut_kat"];
 
