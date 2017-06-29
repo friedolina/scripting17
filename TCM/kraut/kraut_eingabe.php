@@ -26,14 +26,12 @@
     
     if ($kraut_id) {
         echo '<div id="headline"><h1>Kraut bearbeiten</h1></div>';
-        echo '<form action="kraut_bearbeiten.php" method="post">';
     } else {
         echo '<div id="headline"><h1>Neues Kraut</h1></div>';
-        echo '<form action="kraut_ausgabe.php" method="post">';
     }
 ?>
     
-    
+    <form action="kraut_ausgabe.php" method="post">
     <input type="hidden" name="kraut_id" value="<?php echo $kraut_id ?>">
     <h4>Name: </h4>
     <div class="flexcontainer">
