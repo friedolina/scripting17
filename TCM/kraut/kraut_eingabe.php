@@ -31,7 +31,7 @@
     }
 ?>
     
-    <form action="kraut_ausgabe.php" method="post">
+    <form action="kraut_ausgabe.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="kraut_id" value="<?php echo $kraut_id ?>">
     <h4>Name: </h4>
     <div class="flexcontainer">
@@ -108,15 +108,21 @@
             }
         ?>
     </select>
-                
-    <h4>Bild: </h4>
-    <input type="submit" value="Speichern"/>
+    <div id='bild'>
+        <h4>Bild: </h4>
+            <?php
+            if ($kraut_id && $kraut_bearbeiten['bild'] != null) {
+                echo "<img src='/TCM/images/" . $kraut_bearbeiten["bild"] . "' /></br>";
+                echo "<input type='checkbox' name='delete_bild' value='delete' class='checkbox'/> Bild löschen";
+            } else {
+                echo '<input type="file" name="image" value="Durchsuchen..."/>';
+            }
+            ?>
+    </div>
+
+    <input type="submit" value="Kraut speichern"/>
     <input type="reset" value="Zurücksetzen"/>
-            
 </form>
-<!--form action="https://semesterproject-frieda.c9users.io/TCM/kraut/alle_kraeuter.php">
-    <input type="submit" value="Alle Kräuter anzeigen" />
-</form-->
 
 <?php    
     include '../footer.php';

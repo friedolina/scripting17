@@ -20,7 +20,11 @@ body p, input {
 }
 .kat_auswahl {
   display:block;
-  margin: 10px;
+  margin: 20px 10px;
+}
+.checkbox {
+  margin-left: 10px !important;
+  display: inline-block;
 }
 
 .eingabe, .kat_auswahl {
